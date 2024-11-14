@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Produtos - Exemplo de Requisição com Axios</title>
+  
+  <!-- Importando a biblioteca Axios a partir de uma CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- Importando o Bootstrap para estilização -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* Estilos personalizados */
+    body {
+      background-color: #f0f5f9;
+      color: #333;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #4a7a8c;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #produto-list li {
+      background-color: #e1ebf0;
+      border: 1px solid #d1dee4;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lista de Produtos</h1>
+    <ul id="produto-list" class="list-unstyled">
+      <!-- As descrições dos produtos aparecerão aqui -->
+    </ul>
+  </div>
+  
+  <script>
+    // Endpoint da API de produtos
+    const apiUrl = 'http://localhost:8080/produtos';
+
+    // Fazendo uma requisição GET com Axios
+    axios.get(apiUrl)
+      .then(response => {
+        // Pegando o elemento <ul> onde as descrições dos produtos serão inseridas
+        const ul = document.getElementById('produto-list');
+
+        // Iterando sobre os produtos e exibindo as descrições
+        response.data.forEach(produto => {
+          // Criando um novo item de lista (<li>) para cada produto
+          const li = document.createElement('li');
+          li.textContent = produto.descricao; // Exibe a descrição
+          ul.appendChild(li);
+        });
+      })
+      .catch(error => {
+        console.error('Erro:', error);
+      });
+  </script>
+</body>
+</html>

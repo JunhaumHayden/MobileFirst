@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testando Axios - Requisição de Categorias</title>
+  
+  <!-- Importando a biblioteca Axios a partir de uma CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <h1>Exemplo de Requisição com Axios</h1>
+  <ul id="category-list">
+    <!-- As descrições das categorias aparecerão aqui -->
+  </ul>
+  
+
+  <script>
+    // Endpoint da API de categorias
+    const apiUrl = 'http://localhost:8080/categorias';
+
+    // Fazendo uma requisição GET com Axios
+    axios.get(apiUrl)
+      .then(response => {
+        // Pegando o elemento <ul> onde as descrições das categorias serão inseridas
+        const ul = document.getElementById('category-list');
+
+        // Iterando sobre as categorias e exibindo as descrições
+        response.data.forEach(category => {
+          // Criando um novo item de lista (<li>) para cada descrição de categoria
+          const li = document.createElement('li');
+          li.textContent = category.descricao; // Exibe a descrição
+          ul.appendChild(li);
+        });
+      })
+      .catch(error => {
+        console.error('Erro:', error);
+      });
+  </script>
+</body>
+</html>
