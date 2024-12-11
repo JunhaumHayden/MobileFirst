@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>ConfortAid App</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <!-- ... -->
+        <link rel="shortcut icon" type="imagex/png" href="/PHP/assets/icon.ico">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;1,200;1,400&family=Red+Hat+Display:wght@400;500;700&family=Roboto&display=swap"
+        rel="stylesheet">
+        <!-- ... -->
+        <link rel='stylesheet' type='text/css' media='screen' href='./assets/css/style.css'>
+        <!-- font-awesome -->
+        <link rel='stylesheet' type='text/css' media='screen'         
+                href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css'>
+            <!-- ... -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <header>
+            <h1>🌐 ConfortAid 🐘</h1>
+        </header>
+         <!-- barra de navegacao da pagina -->
+        <nav>
+            <ul>
+                <li><a href="../">Início</a></li>
+                <li><a href="#tutorials">Tutoriais</a></li>
+                <li><a href="tel:+5548988900001">Contato</a></li>
+            </ul>
+        </nav>
+         <!-- Botão para alternar a visibilidade -->
+        <nav class="navigation">
+            <button type="button" class="btn btn-primary" onclick="navega('home')">
+                <i class="fa-solid fa-home"></i>
+                Home
+            </button>
+            <button type="button" class="btn btn-primary" onclick="navega('perfil')">
+                <i class="fa-solid fa-file"></i>
+                Perfil
+            </button>
+            <button type="button" class="btn btn-primary" onclick="navega('config')">
+                <i class="fa-solid fa-gear"></i>
+                Configurações
+            </button>
+        </nav>
+         <!-- Elemento que será alternado -->
+         <!-- Apresentacao Elemento Home -->
+        <div id="home" class="tela show">
+            <h3>HOME</h3>
+            <p>1 - Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni, rerum dolore soluta obcaecati voluptates quaerat, numquam facere et quam accusantium fugiat, harum placeat est quidem vero quo tempora delectus aspernatur.</p>
+        </div>
+            <!-- Apresentacao Elemento Perfil com axios-->
+        <div id="perfil" class="tela collapse">
+            <div class="container-perfil-profissional">
+                <h4>Lista de Perfis Profissionais</h4>
+                <div class="row" id="produto-list"></div>
+                <div id="error-message" class="error-message"></div>
+            </div>
+        </div>
+         <!-- Apresentacao de Avaliacoes e parceiros do aplicativo-->
+        <div id="config" class="tela collapse">
+            <h3>Avaliacoes</h3>
+            <section class="painel-cartoes">
+
+                <div class="cartao">
+                    <i class="fa-solid fa-folder"></i>
+                    <!-- elemnto <i> utilizado para inserir o icone do font-awesome. -->
+                        <a href="https://junhaumhayden.github.io/publish/">Landingpage</a>
+                </div>
+
+                <div class="cartao">
+                    <i class="fa-solid fa-folder"></i>
+                        <a href="https://junhaumhayden.github.io/publish/gatinhos.html">Ver Gatinhos</a>
+                </div>
+
+                <div class="cartao">
+                    <i class="fa-solid fa-folder"></i>
+                    <a href="https://junhaumhayden.github.io/publish/flexturismo.html">FlexTurismo</a>
+                </div>
+
+                <div class="cartao">
+                    <i class="fa-solid fa-folder"></i>
+                    <a href="https://junhaumhayden.github.io/publish/contato.html">Deixe um comentário</a>
+                </div>
+
+                <div class="cartao">
+                    <i class="fa-solid fa-folder"></i>
+                    <!-- elemnto <i> utilizado para inserir o icone do font-awesome. -->
+                    Um Cartão
+                </div>
+                <div class="cartao">
+                    <i class="fa-solid fa-folder"></i>
+                    <!-- elemnto <i> utilizado para inserir o icone do font-awesome. -->
+                    Oto Cartão
+                </div>
+                <div class="cartao">
+                    <i class="fa-solid fa-folder"></i>
+                    <!-- elemnto <i> utilizado para inserir o icone do font-awesome. -->
+                    Mais Oto Cartão
+                </div>
+                <div class="cartao">
+                    <i class="fa-solid fa-folder"></i>
+                    <!-- elemnto <i> utilizado para inserir o icone do font-awesome. -->
+                    Ultimo Cartão
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <div class="footer-container">
+                <div class="logo">
+                    <img src="/PHP/assets/icons/icon36x36.ico" width="30" alt="Logo">
+                </div>
+                <div class="info">
+                    <div>&copy; 2024 HTML / CSS / JavaScript / BootStrap</div>
+                    <div>Desenvolvido por: Carlos Hayden Junior</div>
+                </div>
+                <div class="icons">
+                    <img src="/PHP/assets/icons/icon-html5-48.png" width="20" alt="HTML Icon">
+                    <img src="/PHP/assets/icons/icon-css3-48.ico" width="20" alt="CSS Icon">
+                    <img src="/PHP/assets/icons/icons8-js-48.png" width="20" alt="JS Icon">
+                </div>
+            </div>
+            
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Importando a biblioteca Axios a partir de uma CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script>
+            if ('serviceWorker' in navigator) {
+              navigator.serviceWorker.register('/service-worker.js')
+                .then(() => console.log('Service Worker registrado com sucesso.'))
+                .catch(err => console.error('Erro ao registrar o Service Worker:', err));
+            }
+          </script>
+          
+        <!-- Script para alternar a tela ativa -->
+         <script>
+            function navega(destino){
+                let telas = document.getElementsByClassName('tela')
+                Array.from(telas).forEach(element => {
+                    element.classList.remove('show')
+                    element.classList.add('collapse')
+                });
+                document.getElementById(destino).classList.remove('collapse')
+                document.getElementById(destino).classList.add('show')
+            }
+
+            // Endpoint da API de profissionais
+            // Função para gerar o próximo nome de imagem com base na categoria e numeração
+    function gerarNomeImagem(categoria, numero) {
+      const prefixo = categoria.slice(0, 3).toLowerCase();
+      const numeroFormatado = String(numero).padStart(2, '0');
+      return `${prefixo}${numeroFormatado}.jpg`;
+    }
+
+    // Objeto para armazenar a contagem de imagens por categoria
+    const contadorImagens = {};
+
+    // Endpoint da API de produtos
+    const apiUrl = 'http://localhost:8081/produtos';
+
+    // Função para criar o card do produto
+    function criarCard(produto) {
+      const col = document.createElement('div');
+      col.className = 'col-md-4 mb-4';
+      const card = document.createElement('div');
+      card.className = 'card h-100';
+
+      // Verifica e incrementa o contador para a categoria atual
+      const categoria = produto.categoria.descricao;
+      if (!contadorImagens[categoria]) {
+        contadorImagens[categoria] = 1;
+      } else {
+        contadorImagens[categoria]++;
+      }
+
+      // Gera o nome da imagem com base na categoria e contador
+      const nomeImagem = gerarNomeImagem(categoria, contadorImagens[categoria]);
+      const caminhoImagem = `../../icons/myitens/${nomeImagem}`;
+
+      // Cria e adiciona a imagem
+      const img = document.createElement('img');
+      img.src = caminhoImagem;
+      img.className = 'card-img-top';
+      img.alt = produto.descricao;
+
+      const cardBody = document.createElement('div');
+      cardBody.className = 'card-body d-flex flex-column';
+
+      const title = document.createElement('h5');
+      title.className = 'card-title';
+      title.textContent = produto.nome;
+
+      const categoriaText = document.createElement('p');
+      categoriaText.className = 'category';
+      categoriaText.textContent = 'Categoria: ' + produto.categoria.descricao;
+
+      const descricao = document.createElement('p');
+      descricao.className = 'card-text';
+      descricao.textContent = produto.descricao;
+
+      const preco = document.createElement('p');
+      preco.className = 'price';
+      preco.textContent = 'Preço: R$ ' + produto.preco.toFixed(2);
+
+      const button = document.createElement('a');
+      button.href = 'detalhes.html?id=' + produto.id;
+      button.className = 'btn btn-primary mt-auto';
+      button.textContent = 'Ver Detalhes';
+
+      cardBody.appendChild(title);
+      cardBody.appendChild(categoriaText);
+      cardBody.appendChild(descricao);
+      cardBody.appendChild(preco);
+      cardBody.appendChild(button);
+
+      card.appendChild(img);
+      card.appendChild(cardBody);
+      col.appendChild(card);
+
+      return col;
+    }
+
+    // Requisição GET com Axios
+    axios.get(apiUrl)
+      .then(response => {
+        const produtoList = document.getElementById('produto-list');
+        response.data.forEach(produto => {
+          const card = criarCard(produto);
+          produtoList.appendChild(card);
+        });
+      })
+      .catch(error => {
+        console.error('Erro:', error);
+        const errorMessage = document.getElementById('error-message');
+        errorMessage.textContent = 'Ocorreu um erro ao carregar os produtos. Tente novamente mais tarde.';
+      });
+  
+        </script>
+    </body>
+</html> 

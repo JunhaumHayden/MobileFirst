@@ -5,25 +5,35 @@ header {
     border-bottom: 2px solid #ff4081;
     font-size: medium;
 }
-/* Formata menu interativo - SPA*/
-.navigation{
-    display: flex;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+
+h4 {
+    font-size: 24px;
+    color: #4a7a8c;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+p {
+    color: red;
 }
 
+/* Ajuste da navegação para respeitar o fluxo da página */
+.navigation {
+    display: flex;
+    position: relative; /* Permite que os elementos abaixo sejam empurrados para baixo */
+    width: 100%;
+    bottom: auto;
+    z-index: 1; /* Garante que a navegação fique por cima dos cartões, se necessário */
+}
 nav button{
     width: 33%;
     height: 3em;
     border-radius: 0 !important;
     border: 2px solid red; 
 }
+/* Ajuste geral da tela */
 .tela {
-    /* transition: none !important; Desabilita a transição */
-    height: 100vh;
+    min-height: 100vh; /* Garante altura mínima da tela */
     background-color: lightgray;
-    border-color: gray;
     padding: 3rem;
 }
 /* Formata menu de nagevacao superior */
@@ -76,6 +86,8 @@ body {
     justify-content: space-evenly; /* Distribui o espaço entre os filho de maneira igual*/
     padding-left: 1rem; /* Espaçamento interna responsivo */
  }
+
+  /* Ajuste dos cartões */
  .painel-cartoes{
     display: flex;
     justify-content: space-evenly; /* Distribui o espaço entre os filho de maneira igual*/
@@ -84,6 +96,50 @@ body {
     padding: 1rem;
     margin-bottom: 15rem;
  }
+
+ .container-perfil-profissional {
+    
+    width: 100%; /* Ocupará toda a largura disponível */
+    max-width: none; /* Remove a limitação de largura máxima */
+    padding: 1rem; /* Adiciona espaçamento interno */
+    box-sizing: border-box; /* Inclui padding e borda no cálculo do tamanho */
+    margin: 0 auto; /* Centraliza o conteúdo */
+    background-color: #ffffff; /* Mantém as configurações existentes */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+    /* margin-top: 50px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px; */
+  }
+  .card {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  .card:hover {
+    transform: scale(1.02);
+  }
+  .card-title {
+    color: #2c3e50;
+  }
+  .card-text {
+    color: #34495e;
+  }
+  .price {
+    font-weight: bold;
+    color: #16a085;
+  }
+  .category {
+    font-size: 0.9em;
+    color: #7f8c8d;
+  }
  
  .cartao {
     width: 20rem; /*largura responsiva*/
@@ -105,6 +161,8 @@ body {
     gap: 20px; /* Espaçamento entre imagens */
     padding: 20px; 
  }
+ /* Galeria de cartões */
+
  .gallery img {
     width: 200px; /* Largura fixa para cada imagem */
     height: 150px; /* Altura fixa para cada imagem */
@@ -125,6 +183,7 @@ footer{
     display: flex;
     /* Orientacao dos item do rodape */
     flex-direction: row;
+    margin-top: 1rem; /* Adiciona espaçamento superior */
  }
 
  .footer-container {
@@ -158,7 +217,8 @@ footer{
 
 @media (max-width: 768px) {
     .footer-container {
-        flex-direction: row;
+        /* flex-direction: row; */
+        flex-direction: column; /* Torna o layout mais responsivo */
         text-align: center;
         
     }

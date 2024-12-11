@@ -12,12 +12,10 @@ header {
     bottom: 0;
     width: 100%;
 }
-
 nav button{
     width: 33%;
     height: 3em;
     border-radius: 0 !important;
-    border: 2px solid red; 
 }
 .tela {
     /* transition: none !important; Desabilita a transição */

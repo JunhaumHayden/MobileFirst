@@ -2,12 +2,14 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Testando Axios - Requisição de Produtos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Profissionais - Exemplo de Requisição com Axios</title>
   
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  
+  <!-- Importando o Bootstrap para estilização -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <style>
+    /* Estilos personalizados */
     body {
       background-color: #f0f8ff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -48,14 +50,16 @@
   </style>
 </head>
 <body>
-  
   <div class="container">
-    <h1 class="header">Exemplo de Requisição com Axios</h1>
+    <h1>Lista de Profissionais</h1>
     <div class="row" id="produto-list"></div>
     <div id="error-message" class="error-message"></div>
+      <!-- As descrições dos profissionais aparecerão aqui -->
+    </ul>
   </div>
-
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Importando a biblioteca Axios a partir de uma CDN -->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   
   <script>
@@ -149,6 +153,5 @@
         errorMessage.textContent = 'Ocorreu um erro ao carregar os produtos. Tente novamente mais tarde.';
       });
   </script>
-  
 </body>
 </html>

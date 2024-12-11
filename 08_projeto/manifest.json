@@ -1,0 +1,21 @@
+{
+    "short_name": "ConfortAid",
+    "name": "ConfortAid App",
+    "icons": [
+      {
+        "src": "assets/icons/icon36x36.ico",
+        "sizes": "36x36",
+        "type": "image/x-icon"
+      },
+      {
+        "src": "assets/icons/icon192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#007bff"
+  }
+  
