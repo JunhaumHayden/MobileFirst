@@ -1,0 +1,30 @@
+<div class="container mt-4">
+    <h1>Nossos Serviços</h1>
+    <p>Veja os serviços disponíveis e encontre o que melhor atende às suas necessidades.</p>
+    <div id="lista-servicos" class="row"></div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        axios.get("http://localhost:8080/api/servicos")
+            .then(response => {
+                const listaServicos = document.getElementById("lista-servicos");
+                listaServicos.innerHTML = response.data.map(servico => `
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <img src="assets/servicos/${servico.id}.jpg" class="card-img-top" alt="${servico.nome}">
+                            <div class="card-body">
+                                <h5 class="card-title">${servico.nome}</h5>
+                                <p class="card-text">${servico.descricao}</p>
+                                <p class="card-text"><strong>R$ ${servico.preco.toFixed(2)}</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            })
+            .catch(error => {
+                console.error("Erro ao carregar serviços:", error);
+                document.getElementById("lista-servicos").innerHTML = `<p class="text-danger">Não foi possível carregar os serviços.</p>`;
+            });
+    });
+</script>

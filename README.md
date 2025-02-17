@@ -63,3 +63,8 @@ Personalize o código para atender às suas necessidades!
 
 | [<img src="https://avatars.githubusercontent.com/u/79289647?v=4" width=115><br><sub>Carlos Hayden</sub>](https://github.com/JunhaumHayden) |
 | :---: |
+
+Apresentação: https://youtube.com/shorts/NT38RAynvtM?feature=share
+Dona Ana: https://www.youtube.com/shorts/NWbunEuhg-Y
+
+https://junhaumhayden.github.io/ComfortAid_APP_Project/

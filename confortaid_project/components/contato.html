@@ -1,0 +1,39 @@
+<div class="container mt-4">
+    <h1>Fale Conosco</h1>
+    <p>Entre em contato para tirar dúvidas ou obter mais informações sobre nossos serviços.</p>
+    <form id="form-contato">
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nome" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="mensagem" class="form-label">Mensagem</label>
+            <textarea class="form-control" id="mensagem" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+    <div id="mensagem-status" class="mt-3"></div>
+</div>
+
+<script>
+    document.getElementById("form-contato").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const nome = document.getElementById("nome").value;
+        const email = document.getElementById("email").value;
+        const mensagem = document.getElementById("mensagem").value;
+
+        axios.post("http://localhost:8080/api/contato", { nome, email, mensagem })
+            .then(response => {
+                document.getElementById("mensagem-status").innerHTML = `<div class="alert alert-success">Mensagem enviada com sucesso!</div>`;
+                this.reset();
+            })
+            .catch(error => {
+                document.getElementById("mensagem-status").innerHTML = `<div class="alert alert-danger">Erro ao enviar mensagem. Tente novamente.</div>`;
+            });
+    });
+</script>

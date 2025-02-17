@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComfortAid</title>
+    <!-- ... -->
+    <link rel="shortcut icon" type="imagex/png" href="https://www.canva.com/design/DAGe7NB7pgQ/ZJgk9vlJu-KtYm0tS4E_2g/view?utm_content=DAGe7NB7pgQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h58e967201c">
+
+    <!-- ... -->
+    <link rel='stylesheet' type='text/css' media='screen' href='../assets/css/style.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script defer src="app.js"></script>
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">ComfortAid</div>
+        <button class="menu-toggle" id="menuToggle">
+            ☰
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="alterar-dados.html">Alterar Dados</a></li>
+            <li><a href="avaliacoes.html">Avaliações</a></li>
+            <li id="menuProfissional"><a href="cadastro-servico.html">Cadastro de Serviço</a></li>
+            <li><button id="logout">Sair</button></li>
+        </ul>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">ComfortAid</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#avaliacoes">Avaliações</a></li>
+                </ul>
+                <button class="btn btn-outline-primary" id="logout">Sair</button>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container mt-4">
+        <div id="home" class="content-section">
+            <h2>Bem-vindo ao ComfortAid</h2>
+            <p>Encontre profissionais qualificados para massagens e terapias.</p>
+        </div>
+        <div id="servicos" class="content-section d-none">
+            <h2>Serviços Disponíveis</h2>
+            <ul id="servicos-lista" class="list-group"></ul>
+        </div>
+        <div id="avaliacoes" class="content-section d-none">
+            <h2>Avaliações de Clientes</h2>
+            <ul id="avaliacoes-lista" class="list-group"></ul>
+        </div>
+    </div>
+    <script src="../assets/js/menu.js"></script>
+</body>
+</html>

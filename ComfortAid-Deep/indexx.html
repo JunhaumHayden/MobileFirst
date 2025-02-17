@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComfortAid</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Login Page -->
+        <div id="login-page" class="container mt-5">
+            <h2>Login</h2>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" onclick="login()">Entrar</button>
+            </div>
+        </div>
+
+        <!-- Professional Page -->
+        <div id="professional-page" class="hidden">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button class="btn btn-primary me-2" onclick="showSection('home')">Home</button>
+                    <button class="btn btn-primary me-2" onclick="showSection('update-data')">Atualizar Dados</button>
+                    <button class="btn btn-primary me-2" onclick="showSection('new-service')">Cadastrar Novo Serviço</button>
+                    <button class="btn btn-primary" onclick="showSection('reviews')">Avaliações</button>
+                </div>
+            </nav>
+
+            <div id="home" class="container mt-3">
+                <h3>Home</h3>
+                <div id="scheduled-appointments" class="row"></div>
+            </div>
+
+            <div id="update-data" class="container mt-3 hidden">
+                <h3>Atualizar Dados</h3>
+                <!-- Formulário para atualizar dados -->
+            </div>
+
+            <div id="new-service" class="container mt-3 hidden">
+                <h3>Cadastrar Novo Serviço</h3>
+                <!-- Formulário para cadastrar novo serviço -->
+            </div>
+
+            <div id="reviews" class="container mt-3 hidden">
+                <h3>Avaliações</h3>
+                <div id="reviews-list" class="row"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
