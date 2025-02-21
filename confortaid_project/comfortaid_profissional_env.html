@@ -87,7 +87,7 @@
     <nav>
         <ul>
             <li><a href="../../PHP/index.html">Início</a></li>
-            <li><a href="comfortaid_profissional_show.html">Voltar</a></li>
+            <li><a href="indexx.html">Voltar</a></li>
             <li><a href="tel:+5548988900001">Contato</a></li>
         </ul>
     </nav>
@@ -106,6 +106,7 @@
                 <button onclick="login()">Entrar</button>
             </div>
         </div>
+        <!-- Apresentacao da area restrita a profissionais -->
         <div id="professional-page" class="hidden">
             
              <!-- Botão para alternar a visibilidade -->
@@ -134,84 +135,154 @@
                 <h2>Bem-vindo, <span id="professional-name"></span></h2>
                 <button onclick="showSection('update-data')">Atualizar Dados</button>
                 <button onclick="showSection('new-service')">Cadastrar Novo Serviço</button>
-            <!-- <button onclick="showSection('schedule')">Verificar Agenda</button> -->
-            <div id="update-data" class="hidden">
-                <h3>Atualizar Dados</h3>
-                <!-- Formulário para atualizar dados -->
-            </div>
-            <div id="new-service" class="hidden">
-                <h3>Cadastrar Novo Serviço</h3>
-                <!-- Formulário para cadastrar novo serviço -->
-            </div>
-            <h4>Agendamentos Programados</h4>
-                <div class="row" id="scheduled-appointments"></div>
-                <div id="error-message" class="error-message"></div>
-                <ul id="appointments-list"></ul>
-                <!-- Conteúdo da página de apresentação -->
-                <div id="presentation-content"></div>
-            </div>
-            
-            <div id="update-data" class="hidden">
-                <h3>Atualizar Dados</h3>
-                <!-- Formulário para atualizar dados -->
-            </div>
-    
-            <!-- Página de novo serviço -->
-            <div id="new-service" class="hidden">
-                <h3>Cadastrar Novo Serviço</h3>
-                <!-- Formulário para cadastrar novo serviço -->
+                <!-- <button onclick="showSection('schedule')">Verificar Agenda</button> -->
+                <div id="update-data" class="hidden">
+                    <h3>Atualizar Dados</h3>
+                    <!-- Formulário para atualizar dados -->
+                </div>
+                <div id="new-service" class="hidden">
+                    <h3>Cadastrar Novo Serviço</h3>
+                    <!-- Formulário para cadastrar novo serviço -->
+                </div>
+
+                <h4>Agendamentos Programados</h4>
+                    <div class="row" id="scheduled-appointments"></div>
+                    <div id="error-message" class="error-message"></div>
+                    <ul id="appointments-list"></ul>
+                    <!-- Conteúdo da página de apresentação -->
+                    <div id="presentation-content"></div>
             </div>
             
              <!-- Apresentacao de Avaliacoes e parceiros do aplicativo-->
-            <div id="Reviews" class="tela collapse">
-                <h3>Avaliacoes</h3>
-                <section class="painel-cartoes">
-    
-                    <div class="cartao">
-                        <i class="fa-solid fa-folder"></i>
-                        <!-- elemnto <i> utilizado para inserir o icone do font-awesome. -->
-                            <a href="https://junhaumhayden.github.io/publish/">Landingpage</a>
-                    </div>
-    
-                    <div class="cartao">
-                        <i class="fa-solid fa-folder"></i>
-                            <a href="https://junhaumhayden.github.io/publish/gatinhos.html">Ver Gatinhos</a>
-                    </div>
-    
-                    <div class="cartao">
-                        <i class="fa-solid fa-folder"></i>
-                        <a href="https://junhaumhayden.github.io/publish/flexturismo.html">FlexTurismo</a>
-                    </div>
-    
-                    <div class="cartao">
-                        <i class="fa-solid fa-folder"></i>
-                        <a href="https://junhaumhayden.github.io/publish/contato.html">Deixe um comentário</a>
-                    </div>
-    
-                    <div class="cartao">
-                        <i class="fa-solid fa-folder"></i>
-                        <!-- elemnto <i> utilizado para inserir o icone do font-awesome. -->
-                        Um Cartão
-                    </div>
-                    <div class="cartao">
-                        <i class="fa-solid fa-folder"></i>
-                        <!-- elemnto <i> utilizado para inserir o icone do font-awesome. -->
-                        Oto Cartão
-                    </div>
-                    <div class="cartao">
-                        <i class="fa-solid fa-folder"></i>
-                        <!-- elemnto <i> utilizado para inserir o icone do font-awesome. -->
-                        Mais Oto Cartão
-                    </div>
-                    <div class="cartao">
-                        <i class="fa-solid fa-folder"></i>
-                        <!-- elemnto <i> utilizado para inserir o icone do font-awesome. -->
-                        Ultimo Cartão
-                    </div>
-                </section>
+        <div id="Reviews" class="tela collapse">
+            <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                <h3>Avaliações</h3>
+                <div id="reviews-list" class="list-group">
+                    <!-- Avaliações serão carregadas aqui -->
+                </div>
+                </div>
+                <div class="col-md-4">
+                <h4>Links Patrocinados</h4>
+                <div class="list-group">
+                    <a href="https://junhaumhayden.github.io/publish/" class="list-group-item list-group-item-action">Landingpage</a>
+                    <a href="https://junhaumhayden.github.io/publish/flexturismo.html" class="list-group-item list-group-item-action">FlexTurismo</a>
+                    <a href="https://junhaumhayden.github.io/publish/gatinhos.html" class="list-group-item list-group-item-action">Ver Gatinhos Fofinhos</a>
+                </div>
+                </div>
             </div>
-            
+            </div>
         </div>
+        </div>
+
+        <!-- Apresentacao da area restrita a cliente -->
+        <div id="cliente-page" class="hidden">
+            
+            <!-- Botão para alternar a visibilidade -->
+           <nav class="navigation">
+               <button type="button" class="btn btn-primary" onclick="showSection('home')">
+                   <i class="fa-solid fa-home"></i>
+                   Home
+               </button>
+               <button type="button" class="btn btn-primary" onclick="showSection('update-data')">
+                   <i class="fa-solid fa-concierge-bell"></i>
+                   Atualizar Dados
+               </button>
+               <button type="button" class="btn btn-primary" onclick="showSection('new-service')">
+                   <i class="fa-solid fa-file"></i>
+                   Cadastrar Novo Serviço
+               </button>
+               <button type="button" class="btn btn-primary" onclick="showSection('Reviews')">
+                   <i class="fa-solid fa-star"></i>
+                   Avaliações
+               </button>
+           </nav>
+            <!-- Elemento que será alternado -->
+            <!-- Apresentacao Elemento Home -->
+           <div id="home" class="tela show">
+               <h3>HOME</h3>
+               <h2>Bem-vindo, <span id="cliente-name"></span></h2>
+               <button onclick="showSection('update-data')">Atualizar Dados</button>
+               <button onclick="showSection('new-service')">Cadastrar Novo Serviço</button>
+           <!-- <button onclick="showSection('schedule')">Verificar Agenda</button> -->
+           <div id="update-data" class="hidden">
+               <h3>Atualizar Dados</h3>
+               <!-- Formulário para atualizar dados -->
+           </div>
+           <div id="new-service" class="hidden">
+               <h3>Cadastrar Novo Serviço</h3>
+               <!-- Formulário para cadastrar novo serviço -->
+           </div>
+           <h4>Agendamentos Programados</h4>
+               <div class="row" id="scheduled-appointments"></div>
+               <div id="error-message" class="error-message"></div>
+               <ul id="appointments-list"></ul>
+               <!-- Conteúdo da página de apresentação -->
+               <div id="presentation-content"></div>
+           </div>
+           
+           <div id="update-data" class="hidden">
+               <h3>Atualizar Dados</h3>
+               <!-- Formulário para atualizar dados -->
+           </div>
+   
+           <!-- Página de novo serviço -->
+           <div id="new-service" class="hidden">
+               <h3>Cadastrar Novo Serviço</h3>
+               <!-- Formulário para cadastrar novo serviço -->
+           </div>
+           
+            <!-- Apresentacao de Avaliacoes e parceiros do aplicativo-->
+           <div id="Reviews" class="tela collapse">
+               <h3>Avaliacoes</h3>
+               <section class="painel-cartoes">
+   
+                   <div class="cartao">
+                       <i class="fa-solid fa-folder"></i>
+                       <!-- elemnto <i> utilizado para inserir o icone do font-awesome. -->
+                           <a href="https://junhaumhayden.github.io/publish/">Landingpage</a>
+                   </div>
+   
+                   <div class="cartao">
+                       <i class="fa-solid fa-folder"></i>
+                           <a href="https://junhaumhayden.github.io/publish/gatinhos.html">Ver Gatinhos</a>
+                   </div>
+   
+                   <div class="cartao">
+                       <i class="fa-solid fa-folder"></i>
+                       <a href="https://junhaumhayden.github.io/publish/flexturismo.html">FlexTurismo</a>
+                   </div>
+   
+                   <div class="cartao">
+                       <i class="fa-solid fa-folder"></i>
+                       <a href="https://junhaumhayden.github.io/publish/contato.html">Deixe um comentário</a>
+                   </div>
+   
+                   <div class="cartao">
+                       <i class="fa-solid fa-folder"></i>
+                       <!-- elemnto <i> utilizado para inserir o icone do font-awesome. -->
+                       Um Cartão
+                   </div>
+                   <div class="cartao">
+                       <i class="fa-solid fa-folder"></i>
+                       <!-- elemnto <i> utilizado para inserir o icone do font-awesome. -->
+                       Oto Cartão
+                   </div>
+                   <div class="cartao">
+                       <i class="fa-solid fa-folder"></i>
+                       <!-- elemnto <i> utilizado para inserir o icone do font-awesome. -->
+                       Mais Oto Cartão
+                   </div>
+                   <div class="cartao">
+                       <i class="fa-solid fa-folder"></i>
+                       <!-- elemnto <i> utilizado para inserir o icone do font-awesome. -->
+                       Ultimo Cartão
+                   </div>
+               </section>
+           </div>
+           
+       </div>
     </div>
     <footer>
         <div class="footer-container">
@@ -232,82 +303,136 @@
     </footer>
     <script>
         async function fetchAppointments(professionalId) {
-                    try {
-                        const response = await fetch(`http://localhost:5000/api/agendamentos/profissional/${professionalId}`);
-                        const appointments = await response.json();
-                        const appointmentsList = document.getElementById('appointments-list');
-                        appointmentsList.innerHTML = '';
+            try {
+                const response = await fetch(`http://localhost:5000/api/agendamentos/profissional/${professionalId}`);
+                const appointments = await response.json();
+                const appointmentsList = document.getElementById('appointments-list');
+                appointmentsList.innerHTML = '';
 
-                        appointments.forEach(appointment => {
-                            const listItem = document.createElement('li');
-                            listItem.classList.add('appointment-card');
-                            listItem.innerHTML = `
-                                <h4>${appointment.servico.nome}</h4>
-                                <p>Cliente: ${appointment.cliente.nome}</p>
-                                <p>Data: ${new Date(appointment.dataHora).toLocaleString()}</p>
-                            `;
-                            listItem.onclick = () => showAppointmentDetails(appointment);
-                            appointmentsList.appendChild(listItem);
-                        });
-                    } catch (error) {
-                        console.error('Erro ao buscar agendamentos:', error);
-                        alert('Erro ao buscar agendamentos. Tente novamente mais tarde.');
-                    }
-                }
+                appointments.forEach(appointment => {
+                    const listItem = document.createElement('li');
+                    listItem.classList.add('appointment-card');
+                    listItem.innerHTML = `
+                        <h4>${appointment.servico.nome}</h4>
+                        <p>Cliente: ${appointment.cliente.nome}</p>
+                        <p>Data: ${new Date(appointment.dataHora).toLocaleString()}</p>
+                    `;
+                    listItem.onclick = () => showAppointmentDetails(appointment);
+                    appointmentsList.appendChild(listItem);
+                });
+            } catch (error) {
+                console.error('Erro ao buscar agendamentos:', error);
+                alert('Erro ao buscar agendamentos. Tente novamente mais tarde.');
+            }
+        }
 
-                function showAppointmentDetails(appointment) {
-                    alert(`
-                        Serviço: ${appointment.servico.nome}
-                        Cliente: ${appointment.cliente.nome}
-                        Data: ${new Date(appointment.dataHora).toLocaleString()}
-                        Descrição: ${appointment.servico.descricao}
-                        Preço: R$${appointment.servico.preco}
-                        Duração: ${appointment.servico.duracao} minutos
-                    `);
-                }
+        function showAppointmentDetails(appointment) {
+            alert(`
+                Serviço: ${appointment.servico.nome}
+                Cliente: ${appointment.cliente.nome}
+                Data: ${new Date(appointment.dataHora).toLocaleString()}
+                Descrição: ${appointment.servico.descricao}
+                Preço: R$${appointment.servico.preco}
+                Duração: ${appointment.servico.duracao} minutos
+            `);
+        }
 
+        // async function authenticate(email, password) {
+        //     try {
+        //         const response = await fetch('http://localhost:5000/api/usuarios/login');
+        //         const professionals = await response.json();
+        //         const professional = professionals.find(prof => prof.email === email && prof.senha === password);
+
+        //         if (professional) {
+        //             document.getElementById('login-page').classList.add('hidden');
+        //             document.getElementById('professional-page').classList.remove('hidden');
+        //             document.getElementById('professional-name').textContent = professional.nome;
+        //             return professional;
+        //         } else {
+        //             alert('Email ou senha incorretos');
+        //             return null;
+        //         }
+        //     } catch (error) {
+        //         console.error('Erro ao autenticar:', error);
+        //         alert('Erro ao autenticar. Tente novamente mais tarde.');
+        //         return null;
+        //     }
+        // }
+
+        
+
+        // Salva usuário na sessão
+        function saveSession(user) {
+            sessionStorage.setItem('user', JSON.stringify(user));
+        }
+
+        // Recupera usuário da sessão
+        function getSession() {
+            return JSON.parse(sessionStorage.getItem('user'));
+        }
+
+        // Apaga a sessão (logout)
+        function logout() {
+            sessionStorage.clear();
+            window.location.href = "login.html"; // Redireciona para a página de login
+        }
+
+        // Autenticação e redirecionamento
         async function authenticate(email, password) {
             try {
-                const response = await fetch('http://localhost:5000/api/profissionais');
-                const professionals = await response.json();
-                const professional = professionals.find(prof => prof.email === email && prof.senha === password);
+                const response = await fetch('http://localhost:5000/api/usuarios/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, senha: password })
+                });
 
-                if (professional) {
-                    document.getElementById('login-page').classList.add('hidden');
-                    document.getElementById('professional-page').classList.remove('hidden');
-                    document.getElementById('professional-name').textContent = professional.nome;
-                    return professional;
+                if (!response.ok) {
+                    throw new Error('Erro ao autenticar');
+                }
+
+                const user = await response.json();
+
+                if (user) {
+                    saveSession(user);
+                    redirectToDashboard(user);
                 } else {
                     alert('Email ou senha incorretos');
-                    return null;
                 }
             } catch (error) {
                 console.error('Erro ao autenticar:', error);
                 alert('Erro ao autenticar. Tente novamente mais tarde.');
-                return null;
             }
         }
-        // async function authenticate(email, password) {
-        //     try {
-        //     const response = await axios.get('http://localhost:5000/api/profissionais');
-        //     const professionals = response.data;
-        //     const professional = professionals.find(prof => prof.email === email && prof.senha === password);
 
-        //     if (professional) {
-        //         document.getElementById('login-page').classList.add('hidden');
-        //         document.getElementById('professional-page').classList.remove('hidden');
-        //         document.getElementById('professional-name').textContent = professional.nome;
-        //         return professional;
-        //     } else {
-        //         alert('Email ou senha incorretos');
-        //         return null;
-        //     }
-        //     } catch (error) {
-        //     console.error('Erro ao autenticar:', error);
-        //     alert('Erro ao autenticar. Tente novamente mais tarde.');
-        //     return null;
-        //     }
-        // }
+        // Redireciona usuário para a área correta
+        function redirectToDashboard(user) {
+            if (user.tipo === "profissional") {
+                window.location.href = "dashboard-profissional.html";
+                document.getElementById('login-page').classList.add('hidden');
+                document.getElementById('professional-page').classList.remove('hidden');
+                document.getElementById('professional-name').textContent = professional.nome;
+            } else if (user.tipo === "cliente") {
+                window.location.href = "dashboard-cliente.html";
+                document.getElementById('login-page').classList.add('hidden');
+                document.getElementById('cliente-page').classList.remove('hidden');
+                document.getElementById('cliente-name').textContent = professional.nome;
+            } else {
+                alert("Tipo de usuário inválido");
+                logout();
+            }
+        }
+
+        // Verifica se há um usuário logado ao carregar a página
+        document.addEventListener("DOMContentLoaded", function () {
+            const user = getSession();
+            if (user) {
+                redirectToDashboard(user);
+            }
+        });
+
+    
 
         function login() {
             // Captura o valor do campo de email
@@ -343,7 +468,7 @@
                 document.getElementById(destino).classList.add('show')
             }
             // Carrega a apresentação ao abrir a aba Home
-            document.addEventListener('DOMContentLoaded', carregarApresentacao);
+            // document.addEventListener('DOMContentLoaded', carregarApresentacao);
             // Adiciona o evento de clique ao botão de serviços
             document.querySelector('button[onclick="navega(\'services\')"]').addEventListener('click', carregarServicos);
             // Adiciona o evento de clique ao botão de profissionais

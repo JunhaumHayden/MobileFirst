@@ -319,54 +319,8 @@
             }
 
             // Função para carregar os detalhes do profissional ao clicar no card
-            // function carregarDetalhesProfissional(profissionalID) {
-            //     const apiProfissionalDetalhesUrl = `http://localhost:5000/profissionais/${profissionalID}`;
-            //     axios.get(apiProfissionalDetalhesUrl)
-            //         .then(response => {
-            //             const profissional = response.data;
-            //             const detailsContent = `
-            //                 <div class="row">
-            //                     <div class="col-md-6">
-            //                         <h5>${profissional.nome}</h5>
-            //                         <p>Especialidade: ${profissional.especialidade}</p>
-            //                         <p>Registro Profissional: ${profissional.registroProfissional}</p>
-            //                         <p>Contato:</p>
-            //                         <p>Email: ${profissional.email}</p>
-            //                         <p>Telefone: ${profissional.telefone}</p>
-            //                     </div>
-            //                     <div class="col-md-6" id="service-images">
-            //                         <!-- Imagens serão carregadas aqui -->
-            //                     </div>
-            //                 </div>
-            //                 `;
-                        
-            //             document.getElementById('service-details-content').innerHTML = detailsContent;
-
-            //             const apiImagensUrl = `http://localhost:5000/imagens/usuario/fotos/${profissional.id}`;
-            //             axios.get(apiImagensUrl)
-            //                 .then(response => {
-            //                     const serviceImages = document.getElementById('service-images');
-            //                     serviceImages.innerHTML = ''; // Limpa as imagens antes de adicionar novas
-            //                     response.data.forEach((imagem, index) => {
-            //                         const img = document.createElement('img');
-            //                         img.src = `data:image/png;base64,${imagem.foto}`;
-            //                         img.className = 'img-fluid mb-2';
-            //                         img.alt = `Imagem ${index}`;
-            //                         serviceImages.appendChild(img);
-            //                     });
-            //                 })
-            //                 .catch(error => {
-            //                     console.error('Erro ao carregar as imagens:', error);
-            //                 });
-
-            //         })
-            //         .catch(error => {
-            //             console.error('Erro ao carregar os detalhes do serviço:', error);
-            //             document.getElementById('service-details-content').innerHTML = 'Ocorreu um erro ao carregar os detalhes do serviço. Tente novamente mais tarde.';
-            //         });
-            // }
-            // Função para carregar os detalhes do profissional ao clicar no card
             function carregarDetalhesProfissional(profissionalId) {
+                // Carrega os dados do profissional
                 const apiProfissionalDetalhesUrl = `http://localhost:5000/profissionais/${profissionalId}`;
                 axios.get(apiProfissionalDetalhesUrl)
                     .then(response => {
@@ -394,7 +348,7 @@
                             `;
                         
                         document.getElementById('profile-details-content').innerHTML = detailsContent;
-
+                            // Carrega uma lista de fotos do profissional
                         const apiImagensUrl = `http://localhost:5000/imagens/usuario/fotos/${profissionalId}`;
                         axios.get(apiImagensUrl)
                             .then(response => {
@@ -411,8 +365,8 @@
                             .catch(error => {
                                 console.error('Erro ao carregar as imagens:', error);
                             });
-
-                        const apiServicosUrl = `http://localhost:5000/servicos?profissionalId=${profissionalId}`;
+                            // Carrega os servicos do profissional
+                        const apiServicosUrl = `http://localhost:5000/servicos/profissional/${profissionalId}`;
                         axios.get(apiServicosUrl)
                             .then(response => {
                                 const serviceList = document.getElementById('professional-services');

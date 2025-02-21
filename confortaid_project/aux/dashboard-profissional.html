@@ -1,0 +1,11 @@
+<h1>Área Profissional</h1>
+<h2>Bem-vindo, <span id="user-name"></span></h2>
+<button onclick="logout()">Sair</button>
+
+<script>
+    const user = getSession();
+    if (!user || user.tipo !== "profissional") {
+        window.location.href = "login.html";
+    }
+    document.getElementById("user-name").textContent = user.nome;
+</script>
