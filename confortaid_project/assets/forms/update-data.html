@@ -1,6 +1,3 @@
-<h1>Área Profissional</h1>
-<h2>Bem-vindo, <span id="user-name"></span></h2>
-<button onclick="logout()">Sair</button>
 <div class="container mt-4">
     <h3>Atualizar Dados</h3>
     <form id="update-data-form">
@@ -27,11 +24,3 @@
         <button type="submit" class="btn btn-primary">Salvar</button>
     </form>
 </div>
-<script>
-    const user = getSession();
-    if (!user || user.tipo !== "profissional") {
-        window.location.href = "login.html";
-    }
-    document.getElementById("user-name").textContent = user.nome;
-</script>
-<script src = script.js></script>

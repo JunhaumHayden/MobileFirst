@@ -1,6 +1,3 @@
-<h1>Bem-vindo, <span id="user-name"></span></h1>
-<button onclick="logout()">Sair</button>
-
 <div class="container mt-4">
     <h3>Cadastrar Novo Serviço</h3>
     <form id="new-service-form">
@@ -27,12 +24,3 @@
         <button type="submit" class="btn btn-primary">Cadastrar</button>
     </form>
 </div>
-
-<script src = script.js></script>
-<script>
-    const user = getSession();
-    if (!user || user.tipo !== "cliente") {
-        window.location.href = "login.html";
-    }
-    document.getElementById("user-name").textContent = user.nome;
-</script>

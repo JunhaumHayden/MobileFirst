@@ -14,8 +14,8 @@
     <!-- font-awesome -->
     <link rel='stylesheet' type='text/css' media='screen'         
             href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css'>
-        <!-- ... -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+     <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
         /* body {
             font-family: Arial, sans-serif;
@@ -83,206 +83,200 @@
     <header>
         <h1>🌐 ComfortAid 🐘</h1>
     </header>
-     <!-- barra de navegacao da pagina -->
-    <nav>
-        <ul>
-            <li><a href="../../PHP/index.html">Início</a></li>
-            <li><a href="indexx.html">Voltar</a></li>
-            <li><a href="tel:+5548988900001">Contato</a></li>
-        </ul>
+     <!-- barra de navegacao da Aplicação -->
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <!-- Botão do menu de hambúrguer -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Itens do menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../PHP/index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="indexx.html">Voltar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tel:+5548988900001">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
     <div class="container_inner">
         <div id="login-page">
-            <h2>Login</h2>
+            <h2 class="text-center">Login</h2>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" required>
+                <input type="email" id="email" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="password">Senha</label>
-                <input type="password" id="password" required>
+                <input type="password" id="password" class="form-control" required>
             </div>
             <div class="form-group">
-                <button onclick="login()">Entrar</button>
+                <button class="btn btn-primary" onclick="login()">Entrar</button>
             </div>
         </div>
         <!-- Apresentacao da area restrita a profissionais -->
         <div id="professional-page" class="hidden">
-            
              <!-- Botão para alternar a visibilidade -->
-            <nav class="navigation">
-                <button type="button" class="btn btn-primary" onclick="showSection('home')">
-                    <i class="fa-solid fa-home"></i>
-                    Home
-                </button>
-                <button type="button" class="btn btn-primary" onclick="showSection('update-data')">
-                    <i class="fa-solid fa-concierge-bell"></i>
-                    Atualizar Dados
-                </button>
-                <button type="button" class="btn btn-primary" onclick="showSection('new-service')">
-                    <i class="fa-solid fa-file"></i>
-                    Cadastrar Novo Serviço
-                </button>
-                <button type="button" class="btn btn-primary" onclick="showSection('Reviews')">
-                    <i class="fa-solid fa-star"></i>
-                    Avaliações
-                </button>
+            <!-- Menu de Navegação -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#userNav" aria-controls="userNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="userNav">
+                        <div class="navigation d-flex justify-content-around mb-4">
+                            <button type="button" class="btn btn-primary" onclick="navega('home')">
+                                <i class="fa-solid fa-home"></i> Home
+                            </button>
+                            <button type="button" class="btn btn-primary" onclick="navega('update-data')">
+                                <i class="fa-solid fa-concierge-bell"></i> Atualizar Dados
+                            </button>
+                            <button type="button" class="btn btn-primary" onclick="navega('new-service')">
+                                <i class="fa-solid fa-file"></i> Cadastrar Novo Serviço
+                            </button>
+                            <button type="button" class="btn btn-primary" onclick="navega('Reviews')">
+                                <i class="fa-solid fa-star"></i> Avaliações
+                            </button>
+                            <button type="button" class="btn btn-primary" onclick="logout()">
+                                <i class="fa-solid fa-right-from-bracket"></i> Sair
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </nav>
              <!-- Elemento que será alternado -->
              <!-- Apresentacao Elemento Home -->
             <div id="home" class="tela show">
                 <h3>HOME</h3>
                 <h2>Bem-vindo, <span id="professional-name"></span></h2>
-                <button onclick="showSection('update-data')">Atualizar Dados</button>
-                <button onclick="showSection('new-service')">Cadastrar Novo Serviço</button>
-                <!-- <button onclick="showSection('schedule')">Verificar Agenda</button> -->
-                <div id="update-data" class="hidden">
-                    <h3>Atualizar Dados</h3>
-                    <!-- Formulário para atualizar dados -->
-                </div>
-                <div id="new-service" class="hidden">
-                    <h3>Cadastrar Novo Serviço</h3>
-                    <!-- Formulário para cadastrar novo serviço -->
-                </div>
-
+                <button class="btn btn-secondary" onclick="navega('update-data')">Atualizar Dados</button>
+                <button class="btn btn-secondary" onclick="navega('new-service')">Cadastrar Novo Serviço</button>
+                
                 <h4>Agendamentos Programados</h4>
                     <div class="row" id="scheduled-appointments"></div>
                     <div id="error-message" class="error-message"></div>
                     <ul id="appointments-list"></ul>
                     <!-- Conteúdo da página de apresentação -->
-                    <div id="presentation-content"></div>
             </div>
-            
+            <!-- Apresentacao Elemento Atualizar Dados -->
+            <div id="update-data" class="tela collapse">
+                <h3>Atualizar Dados</h3>
+                <!-- Formulário para atualizar dados -->
+            </div>
+            <!-- Apresentacao Elemento Aadastrar Novo Serviço -->
+            <div id="new-service" class="tela collapse">
+                <h3>Cadastrar Novo Serviço</h3>
+                <!-- Formulário para cadastrar novo serviço -->
+            </div>
              <!-- Apresentacao de Avaliacoes e parceiros do aplicativo-->
-        <div id="Reviews" class="tela collapse">
-            <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                <h3>Avaliações</h3>
-                <div id="reviews-list" class="list-group">
-                    <!-- Avaliações serão carregadas aqui -->
-                </div>
-                </div>
-                <div class="col-md-4">
-                <h4>Links Patrocinados</h4>
-                <div class="list-group">
-                    <a href="https://junhaumhayden.github.io/publish/" class="list-group-item list-group-item-action">Landingpage</a>
-                    <a href="https://junhaumhayden.github.io/publish/flexturismo.html" class="list-group-item list-group-item-action">FlexTurismo</a>
-                    <a href="https://junhaumhayden.github.io/publish/gatinhos.html" class="list-group-item list-group-item-action">Ver Gatinhos Fofinhos</a>
-                </div>
+            <div id="Reviews" class="tela collapse">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                        <h3>Avaliações</h3>
+                        <div id="reviews-list" class="list-group">
+                            <!-- Avaliações serão carregadas aqui -->
+                        </div>
+                        </div>
+                        <div class="col-md-4">
+                        <h4>Links Patrocinados</h4>
+                        <div class="list-group">
+                            <a href="https://junhaumhayden.github.io/publish/" class="list-group-item list-group-item-action">Landingpage</a>
+                            <a href="https://junhaumhayden.github.io/publish/flexturismo.html" class="list-group-item list-group-item-action">FlexTurismo</a>
+                            <a href="https://junhaumhayden.github.io/publish/gatinhos.html" class="list-group-item list-group-item-action">Ver Gatinhos Fofinhos</a>
+                            <a href="https://arthurs08.github.io/ChefListPrj/" class="list-group-item list-group-item-action">ChefList</a>
+                        </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            </div>
-        </div>
         </div>
 
         <!-- Apresentacao da area restrita a cliente -->
         <div id="cliente-page" class="hidden">
-            
-            <!-- Botão para alternar a visibilidade -->
-           <nav class="navigation">
-               <button type="button" class="btn btn-primary" onclick="showSection('home')">
-                   <i class="fa-solid fa-home"></i>
-                   Home
-               </button>
-               <button type="button" class="btn btn-primary" onclick="showSection('update-data')">
-                   <i class="fa-solid fa-concierge-bell"></i>
-                   Atualizar Dados
-               </button>
-               <button type="button" class="btn btn-primary" onclick="showSection('new-service')">
-                   <i class="fa-solid fa-file"></i>
-                   Cadastrar Novo Serviço
-               </button>
-               <button type="button" class="btn btn-primary" onclick="showSection('Reviews')">
-                   <i class="fa-solid fa-star"></i>
-                   Avaliações
-               </button>
-           </nav>
+          <!-- Botão para alternar a visibilidade -->
+            <!-- Menu de Navegação -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#userNav" aria-controls="userNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="userNav">
+                    <div class="navigation d-flex justify-content-around mb-4">
+                        <button type="button" class="btn btn-primary" onclick="navega('home')">
+                            <i class="fa-solid fa-home"></i> Home
+                        </button>
+                        <button type="button" class="btn btn-primary" onclick="navega('update-data')">
+                            <i class="fa-solid fa-concierge-bell"></i> Atualizar Dados
+                        </button>
+                        <!-- <button type="button" class="btn btn-primary" onclick="navega('new-service')">
+                            <i class="fa-solid fa-file"></i> Cadastrar Novo Serviço
+                        </button> -->
+                        <button type="button" class="btn btn-primary" onclick="navega('Reviews')">
+                            <i class="fa-solid fa-star"></i> Avaliações
+                        </button>
+                        <button type="button" class="btn btn-primary" onclick="logout()">
+                            <i class="fa-solid fa-right-from-bracket"></i> Sair
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
             <!-- Elemento que será alternado -->
             <!-- Apresentacao Elemento Home -->
-           <div id="home" class="tela show">
-               <h3>HOME</h3>
-               <h2>Bem-vindo, <span id="cliente-name"></span></h2>
-               <button onclick="showSection('update-data')">Atualizar Dados</button>
-               <button onclick="showSection('new-service')">Cadastrar Novo Serviço</button>
-           <!-- <button onclick="showSection('schedule')">Verificar Agenda</button> -->
-           <div id="update-data" class="hidden">
-               <h3>Atualizar Dados</h3>
-               <!-- Formulário para atualizar dados -->
-           </div>
-           <div id="new-service" class="hidden">
-               <h3>Cadastrar Novo Serviço</h3>
-               <!-- Formulário para cadastrar novo serviço -->
-           </div>
-           <h4>Agendamentos Programados</h4>
-               <div class="row" id="scheduled-appointments"></div>
-               <div id="error-message" class="error-message"></div>
-               <ul id="appointments-list"></ul>
-               <!-- Conteúdo da página de apresentação -->
-               <div id="presentation-content"></div>
-           </div>
-           
-           <div id="update-data" class="hidden">
-               <h3>Atualizar Dados</h3>
-               <!-- Formulário para atualizar dados -->
-           </div>
-   
-           <!-- Página de novo serviço -->
-           <div id="new-service" class="hidden">
-               <h3>Cadastrar Novo Serviço</h3>
-               <!-- Formulário para cadastrar novo serviço -->
-           </div>
-           
+            <div id="home" class="tela show">
+                <h3>HOME</h3>
+                <h2>Bem-vindo, <span id="cliente-name"></span></h2>
+                <button class="btn btn-secondary" onclick="navega('update-data')">Atualizar Dados</button>
+                <!-- <button class="btn btn-secondary" onclick="navega('new-service')">Consultar Agendamentos</button> -->
+                
+                <h4>Agendamentos Programados</h4>
+                    <div class="row" id="scheduled-appointments"></div>
+                    <div id="error-message" class="error-message"></div>
+                    <ul id="appointments-list"></ul>
+                    <!-- Conteúdo da página de apresentação -->
+            </div>
+            <!-- Apresentacao Elemento Atualizar Dados -->
+            <div id="update-data" class="tela collapse">
+                <h3>Atualizar Dados</h3>
+                <!-- Formulário para atualizar dados -->
+            </div>
+            <!-- Apresentacao Elemento Aadastrar Novo Serviço -->
+            <!-- <div id="new-service" class="tela collapse">
+                <h3>Cadastrar Novo Serviço</h3> -->
+                <!-- Formulário para cadastrar novo serviço -->
+            <!-- </div> -->
             <!-- Apresentacao de Avaliacoes e parceiros do aplicativo-->
-           <div id="Reviews" class="tela collapse">
-               <h3>Avaliacoes</h3>
-               <section class="painel-cartoes">
-   
-                   <div class="cartao">
-                       <i class="fa-solid fa-folder"></i>
-                       <!-- elemnto <i> utilizado para inserir o icone do font-awesome. -->
-                           <a href="https://junhaumhayden.github.io/publish/">Landingpage</a>
-                   </div>
-   
-                   <div class="cartao">
-                       <i class="fa-solid fa-folder"></i>
-                           <a href="https://junhaumhayden.github.io/publish/gatinhos.html">Ver Gatinhos</a>
-                   </div>
-   
-                   <div class="cartao">
-                       <i class="fa-solid fa-folder"></i>
-                       <a href="https://junhaumhayden.github.io/publish/flexturismo.html">FlexTurismo</a>
-                   </div>
-   
-                   <div class="cartao">
-                       <i class="fa-solid fa-folder"></i>
-                       <a href="https://junhaumhayden.github.io/publish/contato.html">Deixe um comentário</a>
-                   </div>
-   
-                   <div class="cartao">
-                       <i class="fa-solid fa-folder"></i>
-                       <!-- elemnto <i> utilizado para inserir o icone do font-awesome. -->
-                       Um Cartão
-                   </div>
-                   <div class="cartao">
-                       <i class="fa-solid fa-folder"></i>
-                       <!-- elemnto <i> utilizado para inserir o icone do font-awesome. -->
-                       Oto Cartão
-                   </div>
-                   <div class="cartao">
-                       <i class="fa-solid fa-folder"></i>
-                       <!-- elemnto <i> utilizado para inserir o icone do font-awesome. -->
-                       Mais Oto Cartão
-                   </div>
-                   <div class="cartao">
-                       <i class="fa-solid fa-folder"></i>
-                       <!-- elemnto <i> utilizado para inserir o icone do font-awesome. -->
-                       Ultimo Cartão
-                   </div>
-               </section>
-           </div>
-           
-       </div>
+            <div id="Reviews" class="tela collapse">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                        <h3>Avaliações</h3>
+                        <div id="reviews-list" class="list-group">
+                            <!-- Avaliações serão carregadas aqui -->
+                        </div>
+                        </div>
+                        <div class="col-md-4">
+                        <h4>Links Patrocinados</h4>
+                        <div class="list-group">
+                            <a href="https://junhaumhayden.github.io/publish/" class="list-group-item list-group-item-action">Landingpage</a>
+                            <a href="https://junhaumhayden.github.io/publish/flexturismo.html" class="list-group-item list-group-item-action">FlexTurismo</a>
+                            <a href="https://junhaumhayden.github.io/publish/gatinhos.html" class="list-group-item list-group-item-action">Ver Gatinhos Fofinhos</a>
+                            <a href="https://arthurs08.github.io/ChefListPrj/" class="list-group-item list-group-item-action">ChefList</a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <footer>
         <div class="footer-container">
@@ -301,10 +295,463 @@
         </div>
         
     </footer>
+     <!-- Bootstrap JS (opcional, necessário para funcionalidades como o menu de hambúrguer) -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-        async function fetchAppointments(professionalId) {
+    // Funções de autenticação e sessão    
+        // Verifica se há um usuário logado ao carregar a página
+        document.addEventListener("DOMContentLoaded", function () {
+            const user = getSession();
+            if (user) {
+                redirectToDashboard(user);
+            }
+        });
+        // Salva usuário na sessão
+        function saveSession(user) {
+            sessionStorage.setItem('user', JSON.stringify(user));
+        }
+
+        // Recupera usuário da sessão
+        function getSession() {
+            return JSON.parse(sessionStorage.getItem('user'));
+        }
+
+        // Apaga a sessão (logout)
+        function logout() {
+            sessionStorage.clear();
+             // Redireciona para a página de login
+            document.getElementById('professional-page').classList.add('hidden');
+            document.getElementById('cliente-page').classList.add('hidden');
+            document.getElementById('login-page').classList.remove('hidden');
+            window.location.href = "indexx.html";
+        }
+
+        // Autenticação e redirecionamento
+        async function authenticate(email, password) {
             try {
-                const response = await fetch(`http://localhost:5000/api/agendamentos/profissional/${professionalId}`);
+                const response = await axios.post('http://localhost:5000/api/usuarios/login', { email, senha: password });
+                const user = response.data;
+                if (user) {
+                    saveSession(user);
+                    redirectToDashboard(user);
+                } else {
+                    alert('Email ou senha incorretos');
+                }
+            } catch (error) {
+                console.error('Erro ao autenticar:', error);
+                alert('Erro ao autenticar. Tente novamente mais tarde.');
+            }
+        }
+
+        // Redireciona usuário para a área correta
+        function redirectToDashboard(user) {
+            if (user.tipo === "profissional") {
+                // window.location.href = "dashboard-profissional.html";
+                document.getElementById('login-page').classList.add('hidden');
+                document.getElementById('professional-page').classList.remove('hidden');
+                document.getElementById('professional-name').textContent = user.nome;
+                fetchAppointmentsProfessional(user.id)
+            } else if (user.tipo === "cliente") {
+                // window.location.href = "dashboard-cliente.html";
+                document.getElementById('login-page').classList.add('hidden');
+                document.getElementById('cliente-page').classList.remove('hidden');
+                document.getElementById('cliente-name').textContent = user.nome;
+                fetchAppointmentsClient(user.id)
+            } else {
+                alert("Tipo de usuário inválido");
+                logout();
+            }
+        }
+
+    
+        // Função para realizar o login
+        function login() {
+            // Captura o valor do campo de email
+            const email = document.getElementById('email').value;
+            // Captura o valor do campo de senha
+            const password = document.getElementById('password').value;
+            // Chama a função authenticate passando o email e a senha
+            authenticate(email, password);
+        }
+    // Função para carregar conteúdo dinamicamente
+        async function loadContent(url, containerId) {
+            try {
+                const response = await fetch(url);
+                const content = await response.text();
+                document.getElementById(containerId).innerHTML = content;
+                attachFormListeners(); // Anexar listeners aos formulários carregados
+            } catch (error) {
+                console.error('Erro ao carregar o conteúdo:', error);
+            }
+        }
+
+        // Função para anexar listeners aos formulários
+        function attachFormListeners() {
+            const updateDataForm = document.getElementById('update-data-form');
+            if (updateDataForm) {
+                updateDataForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const formData = new FormData(updateDataForm);
+                    const data = Object.fromEntries(formData.entries());
+                    console.log('Dados atualizados:', data);
+                    // Enviar dados para a API
+                    alert('Submit pressionado!!');
+                });
+            }
+
+            const newServiceForm = document.getElementById('new-service-form');
+            if (newServiceForm) {
+                newServiceForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const formData = new FormData(newServiceForm);
+                    const data = Object.fromEntries(formData.entries());
+                    console.log('Novo serviço:', data);
+                    // Enviar dados para a API
+                    alert('Submit pressionado!!');
+                });
+            }
+        }
+
+    // Funções de navegação
+        function navega(destino) {
+            let telas = document.getElementsByClassName('tela');
+            Array.from(telas).forEach(element => {
+                element.classList.remove('show');
+                element.classList.add('collapse');
+            });
+            const targetElement = document.getElementById(destino);
+            targetElement.classList.remove('collapse');
+            targetElement.classList.add('show');
+
+            // Carregar conteúdo dinâmico
+            if (destino === 'update-data') {
+                loadContent('./assets/forms/update-data.html', 'update-data');
+            } else if (destino === 'new-service') {
+                loadContent('./assets/forms/new-service.html', 'new-service');
+            }
+        }
+    // Funções de carregamento de dados
+
+
+         // Funcao para apresentar a agenda de profissional
+//          async function fetchAppointmentsProfessional(professionalId) {
+//             try {
+//                 const response = await fetch(`http://localhost:5000/agendamentos/profissional/${professionalId}`);
+//                 const appointments = await response.json();
+//                 const appointmentsList = document.getElementById('appointments-list');
+//                 appointmentsList.innerHTML = '';
+
+//                 appointments.forEach(appointment => {
+//                     const listItem = document.createElement('li');
+//                     listItem.classList.add('appointment-card');
+//                     listItem.innerHTML = `
+//                         <h4>${appointment.servico.nome}</h4>
+//                         <p>Cliente: ${appointment.cliente.nome}</p>
+//                         <p>Data: ${new Date(appointment.dataHora).toLocaleString()}</p>
+//                     `;
+//                     listItem.onclick = () => showAppointmentDetails(appointment);
+//                     appointmentsList.appendChild(listItem);
+//                 });
+//             } catch (error) {
+//                 console.error('Erro ao buscar agendamentos:', error);
+//                 alert('Erro ao buscar agendamentos. Tente novamente mais tarde.');
+//             }
+//             Gerar uma Funcao para apresentar a agenda de profissional utilizando axios e bootstrap para manter a responsividade e um visual envolvente.
+// A lista de agendamentos do profissional será apresentada em:
+// <div id="home" class="tela show">
+//                 <h3>HOME</h3>
+//                 <h2>Bem-vindo, <span id="professional-name"></span></h2>
+//                 <button class="btn btn-secondary" onclick="navega('update-data')">Atualizar Dados</button>
+//                 <button class="btn btn-secondary" onclick="navega('new-service')">Cadastrar Novo Serviço</button>
+                
+//                 <h4>Agendamentos Programados</h4>
+//                     <div class="row" id="scheduled-appointments"></div>
+//                     <div id="error-message" class="error-message"></div>
+//                     <ul id="appointments-list"></ul>
+//                     <!-- Lista de agendamentos -->
+//             </div>
+// Descriçao da função:
+//          function fetchAppointmentsProfessional(professionalId) {
+//             - O ID deve ser recuperado apartir da sessao autenticada.
+//             - A funcao deve gerar um card para cada agendamento da lista com as informaçoes do nome do servico, nome do cliente e data e a imagem do cliente (uma imagem em tamanho pequeno e com as bordas redondas).
+//             - Deve haver filtro por status do agendamento ("CONFIRMADO", "CANCELADO", "PENDENTE")
+
+//             Endpoints:
+
+//             apiBuscarAgendamentoProfissionalPorIdUrl = `http://localhost:5000/agendamentos/profissional/${professionalId}`;
+
+//             exemplo de retorno da API: 
+//             [
+//                 {
+//                     "id": 1,
+//                     "cliente": {
+//                         "id": 1,
+//                         "nome": "Ana Amalia",
+//                         "email": "ana@mail.com",
+//                         "senha": "senha",
+//                         "telefone": "(11) 99999-0001",
+//                         "cep": "88111-111",
+//                         "complementoEndereco": "Apto 101",
+//                         "numeroEndereco": "001",
+//                         "tipo": "cliente",
+//                         "cpf": "11111111111",
+//                         "nascimento": "1955-01-12"
+//                     },
+//                     "servico": {
+//                         "id": 1,
+//                         "nome": "Massagem Relaxante",
+//                         "descricao": "Sessão de massagem para aliviar o estresse e tensões",
+//                         "preco": 120.0,
+//                         "duracao": 60,
+//                         "situacao": "ATIVO",
+//                         "dataDisponivel": "2025-01-12",
+//                         "profissional": {
+//                             "id": 3,
+//                             "nome": "Dany Damaris",
+//                             "email": "dany@mail.com",
+//                             "senha": "senha",
+//                             "telefone": "(31) 97777-0003",
+//                             "cep": "88333-333",
+//                             "complementoEndereco": "Sala 3",
+//                             "numeroEndereco": "003",
+//                             "tipo": "profissional",
+//                             "especialidade": "Massoterapia",
+//                             "registroProfissional": "REG33333"
+//                         }
+//                     },
+//                     "dataHora": "2024-01-12T10:00:00",
+//                     "status": "CONFIRMADO"
+//                 }
+//             ]
+
+//             apiUrlBuscarImagemClientePorId = `http://localhost:5000/imagens/usuario/foto/${clienteId}`;
+
+//             Retorna uma imagem.
+
+
+//             - Ao clicar no card de agendamento deve abrir um novo card com os detalhes do agendamento, que deve conter os detalhes do cliente e deve usar uma API externa para obter o endereço apartir do CEP referencialmente com um mapa para visualizar mais facilmente
+//             - Deve haver um botoes para alterar facilmente status do agendamento ("CONFIRMADO", "CANCELADO", "PENDENTE")
+            
+
+//             apiUrlAtualizarAgendamentoProfissionalPorId = `http://localhost:5000/agendamentos/status/${professionalId}`
+            
+//             Exemplo de envio no corpo: 
+//             {
+//                 "cliente": {
+//                     "id": 1
+//                 },
+//                 "servico": {
+//                     "id": 1
+//                 },
+//                 "dataHora": "2024-02-17T10:00:00",
+//                 "status": "CONFIRMADO"
+//             }
+
+//             Exemplo de retorno da api:arguments{
+//     "id": 4,
+//     "cliente": {
+//         "id": 1,
+//         "nome": "Ana Amalia",
+//         "email": "ana@mail.com",
+//         "senha": "senha",
+//         "telefone": "(11) 99999-0001",
+//         "cep": "88111-111",
+//         "complementoEndereco": "Apto 101",
+//         "numeroEndereco": "001",
+//         "tipo": "cliente",
+//         "cpf": "11111111111",
+//         "nascimento": "1955-01-12"
+//     },
+//     "servico": {
+//         "id": 4,
+//         "nome": "Acolhimento Primeiros Dias",
+//         "descricao": "Acompanhamento dos primeiros dias em sua jornada nesse maravilhoso universo da maternidade.",
+//         "preco": 300.0,
+//         "duracao": 180,
+//         "situacao": "ATIVO",
+//         "dataDisponivel": "2024-02-22",
+//         "profissional": {
+//             "id": 4,
+//             "nome": "Emy Esteves",
+//             "email": "emy@mail.com",
+//             "senha": "senha",
+//             "telefone": "(41) 96666-0004",
+//             "cep": "88333-444",
+//             "complementoEndereco": "casa",
+//             "numeroEndereco": "004",
+//             "tipo": "profissional",
+//             "especialidade": "Parteira",
+//             "registroProfissional": "REG44444"
+//         }
+//     },
+//     "dataHora": "2024-01-14T09:00:00",
+//     "status": "CONFIRMADO"
+// }
+            
+            
+//         }
+// Funcao para apresentar a agenda de profissional
+        async function fetchAppointmentsProfessional(professionalId) {
+            try {
+                // Recupera os agendamentos do profissional
+                const response = await axios.get(`http://localhost:5000/agendamentos/profissional/${professionalId}`);
+                const appointments = response.data;
+
+                // Limpa a lista de agendamentos
+                const appointmentsList = document.getElementById('scheduled-appointments');
+                appointmentsList.innerHTML = '';
+
+                // Filtros de status
+                const statusFilters = {
+                    CONFIRMADO: [],
+                    CANCELADO: [],
+                    PENDENTE: []
+                };
+
+                // Organiza os agendamentos por status
+                appointments.forEach(appointment => {
+                    statusFilters[appointment.status].push(appointment);
+                });
+
+                // Cria cards para cada status
+                for (const [status, filteredAppointments] of Object.entries(statusFilters)) {
+                    if (filteredAppointments.length > 0) {
+                        // Cria um container para os agendamentos do status atual
+                        const statusContainer = document.createElement('div');
+                        statusContainer.classList.add('mb-4');
+                        statusContainer.innerHTML = `<h5 class="mb-3">${status}</h5>`;
+                        appointmentsList.appendChild(statusContainer);
+
+                        // Cria cards para cada agendamento
+                        filteredAppointments.forEach(appointment => {
+                            const card = document.createElement('div');
+                            card.classList.add('col-md-4', 'mb-3');
+                            card.innerHTML = `
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <img src="http://localhost:5000/imagens/usuario/foto/${appointment.cliente.id}" 
+                                                alt="${appointment.cliente.nome}" 
+                                                class="rounded-circle me-3" 
+                                                width="50" 
+                                                height="50">
+                                            <h6 class="card-title mb-0">${appointment.servico.nome}</h6>
+                                        </div>
+                                        <p class="card-text">
+                                            <strong>Cliente:</strong> ${appointment.cliente.nome}<br>
+                                            <strong>Data:</strong> ${new Date(appointment.dataHora).toLocaleString()}
+                                        </p>
+                                        <button class="btn btn-primary btn-sm" onclick="showAppointmentDetails(${appointment.id})">
+                                            Ver Detalhes
+                                        </button>
+                                    </div>
+                                </div>
+                            `;
+                            statusContainer.appendChild(card);
+                        });
+                    }
+                }
+            } catch (error) {
+                console.error('Erro ao buscar agendamentos:', error);
+                document.getElementById('error-message').innerHTML = `
+                    <div class="alert alert-danger" role="alert">
+                        Erro ao carregar agendamentos. Tente novamente mais tarde.
+                    </div>
+                `;
+            }
+        }
+
+        // Função para exibir detalhes do agendamento
+        async function showAppointmentDetails(appointmentId) {
+            try {
+                // Recupera os detalhes do agendamento
+                const response = await axios.get(`http://localhost:5000/agendamentos/${appointmentId}`);
+                const appointment = response.data;
+
+                // Recupera o endereço do cliente usando o CEP
+                const cepResponse = await axios.get(`https://viacep.com.br/ws/${appointment.cliente.cep}/json/`);
+                const endereco = cepResponse.data;
+
+                // Exibe os detalhes em um modal
+                const modalContent = `
+                    <div class="modal fade" id="appointmentDetailsModal" tabindex="-1" aria-labelledby="appointmentDetailsModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="appointmentDetailsModalLabel">Detalhes do Agendamento</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h6>Serviço</h6>
+                                            <p><strong>Nome:</strong> ${appointment.servico.nome}</p>
+                                            <p><strong>Descrição:</strong> ${appointment.servico.descricao}</p>
+                                            <p><strong>Preço:</strong> R$${appointment.servico.preco}</p>
+                                            <p><strong>Duração:</strong> ${appointment.servico.duracao} minutos</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6>Cliente</h6>
+                                            <p><strong>Nome:</strong> ${appointment.cliente.nome}</p>
+                                            <p><strong>Telefone:</strong> ${appointment.cliente.telefone}</p>
+                                            <p><strong>Endereço:</strong> ${endereco.logradouro}, ${endereco.bairro}, ${endereco.localidade} - ${endereco.uf}</p>
+                                        </div>
+                                    </div>
+                                    <div class="mt-3">
+                                        <h6>Mapa</h6>
+                                        <iframe 
+                                            width="100%" 
+                                            height="300" 
+                                            style="border:0" 
+                                            loading="lazy" 
+                                            allowfullscreen 
+                                            src="https://www.google.com/maps/embed/v1/place?key=SUA_CHAVE_API&q=${endereco.logradouro},${endereco.bairro},${endereco.localidade}">
+                                        </iframe>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                    <button type="button" class="btn btn-primary" onclick="updateAppointmentStatus(${appointment.id}, 'CONFIRMADO')">Confirmar</button>
+                                    <button type="button" class="btn btn-warning" onclick="updateAppointmentStatus(${appointment.id}, 'PENDENTE')">Pendente</button>
+                                    <button type="button" class="btn btn-danger" onclick="updateAppointmentStatus(${appointment.id}, 'CANCELADO')">Cancelar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                // Adiciona o modal ao DOM e exibe
+                document.body.insertAdjacentHTML('beforeend', modalContent);
+                const modal = new bootstrap.Modal(document.getElementById('appointmentDetailsModal'));
+                modal.show();
+            } catch (error) {
+                console.error('Erro ao buscar detalhes do agendamento:', error);
+                alert('Erro ao carregar detalhes do agendamento. Tente novamente mais tarde.');
+            }
+        }
+
+        // Função para atualizar o status do agendamento
+        async function updateAppointmentStatus(appointmentId, status) {
+            try {
+                const response = await axios.put(`http://localhost:5000/agendamentos/status/${appointmentId}`, {
+                    status: status
+                });
+
+                if (response.status === 200) {
+                    alert('Status do agendamento atualizado com sucesso!');
+                    fetchAppointmentsProfessional(getSession().id); // Atualiza a lista de agendamentos
+                }
+            } catch (error) {
+                console.error('Erro ao atualizar status do agendamento:', error);
+                alert('Erro ao atualizar status. Tente novamente mais tarde.');
+            }
+        }
+
+    // Funcao para apresentar a agenda de cliente
+        async function fetchAppointmentsClient(clienteId) {
+            try {
+                const response = await fetch(`http://localhost:5000/agendamenClient{clienteId}`);
                 const appointments = await response.json();
                 const appointmentsList = document.getElementById('appointments-list');
                 appointmentsList.innerHTML = '';
@@ -324,6 +771,72 @@
                 console.error('Erro ao buscar agendamentos:', error);
                 alert('Erro ao buscar agendamentos. Tente novamente mais tarde.');
             }
+
+            // A funcao deve gerar um card para cada agendamento da lista retornada pela API com as informaçoes do nome do servico, nome do Profissional e data
+            // Deve haver filtro por status do agendamento ("CONFIRMADO", "CANCELADO", "PENDENTE")
+
+            // Ao clicar no card de agendamento deve abrir um novo card com os detalhes do agendamento, deve conter os detalhes do serviço e informaçoes de contato do profissional
+            // Deve haver botoes para alterar facilmente status do agendamento para "CANCELADO".
+
+            // const apiAtualizarAgendamentoClientePorIdUrl = `http://localhost:5000/agendamentos/status/${clienteId}`
+            
+            // Exemplo de envio no corpo: 
+            // {
+            //     "cliente": {
+            //         "id": 1
+            //     },
+            //     "servico": {
+            //         "id": 1
+            //     },
+            //     "dataHora": "2024-02-17T10:00:00",
+            //     "status": "CONFIRMADO"
+            // }
+            
+            // // const apiBuscarAgendamentosClientePorIdUrl = '`http://localhost:5000/agendamentos/cliente/${clienteId}`';
+
+            // exemplo de retorno da API: 
+            // [
+            //     {
+            //         "id": 1,
+            //         "cliente": {
+            //             "id": 1,
+            //             "nome": "Ana Amalia",
+            //             "email": "ana@mail.com",
+            //             "senha": "senha",
+            //             "telefone": "(11) 99999-0001",
+            //             "cep": "88111-111",
+            //             "complementoEndereco": "Apto 101",
+            //             "numeroEndereco": "001",
+            //             "tipo": "cliente",
+            //             "cpf": "11111111111",
+            //             "nascimento": "1955-01-12"
+            //         },
+            //         "servico": {
+            //             "id": 1,
+            //             "nome": "Massagem Relaxante",
+            //             "descricao": "Sessão de massagem para aliviar o estresse e tensões",
+            //             "preco": 120.0,
+            //             "duracao": 60,
+            //             "situacao": "ATIVO",
+            //             "dataDisponivel": "2025-01-12",
+            //             "profissional": {
+            //                 "id": 3,
+            //                 "nome": "Dany Damaris",
+            //                 "email": "dany@mail.com",
+            //                 "senha": "senha",
+            //                 "telefone": "(31) 97777-0003",
+            //                 "cep": "88333-333",
+            //                 "complementoEndereco": "Sala 3",
+            //                 "numeroEndereco": "003",
+            //                 "tipo": "profissional",
+            //                 "especialidade": "Massoterapia",
+            //                 "registroProfissional": "REG33333"
+            //             }
+            //         },
+            //         "dataHora": "2024-01-12T10:00:00",
+            //         "status": "CONFIRMADO"
+            //     }
+            // ]
         }
 
         function showAppointmentDetails(appointment) {
@@ -336,143 +849,142 @@
                 Duração: ${appointment.servico.duracao} minutos
             `);
         }
+        // Função para atualizar os dados
+        function carregarAtualizarDados(){
+            // Funcao para gerar um card para atualizar os dados do usuario.
+            // Deve carregar conforme o tipo de usuario autenticado.
+            // Deve fornecer os campos preenchidos com os dados atuais e o usuario altera o que julgar necessario: 
+            // Profissional:
+            // const apiBuscarProfissionalPorIdUrl = 'http://localhost:5000/api/usuarios/${profissionalId}';
+            // exemplo de retorno: 
+            // {
+            //     "id": 3,
+            //     "nome": "Dany Damaris",
+            //     "email": "dany@mail.com",
+            //     "senha": "senha",
+            //     "telefone": "(31) 97777-0003",
+            //     "cep": "88333-333",
+            //     "complementoEndereco": "Sala 3",
+            //     "numeroEndereco": "003",
+            //     "tipo": "profissional",
+            //     "especialidade": "Massoterapia",
+            //     "registroProfissional": "REG33333"
+            // }
+            // const apiAtualizarProfissionalUrl = 'http://localhost:5000/profissionais/${profissionalId}';
+            // Exemplo de envio: 
+            // {
+            //     "nome": "Clara Clarinetes",
+            //     "email": "claras@mail.com",
+            //     "senha": "senha2222",
+            //     "telefone": "(48) 98888-2022",
+            //     "cep": "88020-002",
+            //     "numeroEndereco": "002",
+            //     "complementoEndereco": "Sala02",
+            //     "especialidade": "Fitoterapias Quântica",
+            //     "registroProfissional": "REG00002"
+            // }
 
-        // async function authenticate(email, password) {
-        //     try {
-        //         const response = await fetch('http://localhost:5000/api/usuarios/login');
-        //         const professionals = await response.json();
-        //         const professional = professionals.find(prof => prof.email === email && prof.senha === password);
+            // Cliente:
+            // const apiBuscarClientePorIdUrl = 'http://localhost:5000/api/usuarios/${clienteId}';
+            // exemplo de retorno:
+            // {
+            //     "id": 1,
+            //     "nome": "Ana Amalia",
+            //     "email": "ana@mail.com",
+            //     "senha": "senha",
+            //     "telefone": "(11) 99999-0001",
+            //     "cep": "88111-111",
+            //     "complementoEndereco": "Apto 101",
+            //     "numeroEndereco": "001",
+            //     "tipo": "cliente",
+            //     "cpf": "11111111111",
+            //     "nascimento": "1955-01-12"
+            // }
+            // const apiAtualizarClienteUrl = 'http://localhost:5000/clientes/${clienteId}';
+            // Exemplo de envio: 
+            // {
+            //     "nome": "Clara Clarinete",
+            //     "email": "clara@mail.com",
+            //     "senha": "senha22",
+            //     "telefone": "(48) 98888-2222",
+            //     "cep": "88020-222",
+            //     "numeroEndereco": "222",
+            //     "complementoEndereco": "Sala22",
+            //     "tipo": "cliente",
+            //     "cpf": "11111111111",
+            //     "nascimento": "2000-02-12"
+            // }
 
-        //         if (professional) {
-        //             document.getElementById('login-page').classList.add('hidden');
-        //             document.getElementById('professional-page').classList.remove('hidden');
-        //             document.getElementById('professional-name').textContent = professional.nome;
-        //             return professional;
-        //         } else {
-        //             alert('Email ou senha incorretos');
-        //             return null;
-        //         }
-        //     } catch (error) {
-        //         console.error('Erro ao autenticar:', error);
-        //         alert('Erro ao autenticar. Tente novamente mais tarde.');
-        //         return null;
-        //     }
-        // }
-
-        
-
-        // Salva usuário na sessão
-        function saveSession(user) {
-            sessionStorage.setItem('user', JSON.stringify(user));
+            
         }
 
-        // Recupera usuário da sessão
-        function getSession() {
-            return JSON.parse(sessionStorage.getItem('user'));
+        // Função para cadastrar um novo servico
+        function cadastrarNovoServico(){
+            // Funçao para gerar um card para criar um novo servico.
+            // const apiCriarServicoUrl = 'http://localhost:5000/servicos';
+            // Id Profissicional deve ser recuperado da sessao. 
+
+            // exemplo de envio no corpo:
+            // {
+            //     "nome": "Servico de teste",
+            //     "descricao": "Acompanhamento dos primeiros teste de criar servico.",
+            //     "preco": 300.0,
+            //     "duracao": 180,
+            //     "situacao": "ATIVO",
+            //     "dataDisponivel": "2024-02-22",
+            //     "profissional": {
+            //         "id": 4
+            //     }
+            // }
+
+            // deve haver um campo para envio de imagem relacionada ao servico
+
+            // const apiEnviarImagemServicoUrl = 'http://localhost:5000/imagens/servico/${servicoId}'
+
         }
 
-        // Apaga a sessão (logout)
-        function logout() {
-            sessionStorage.clear();
-            window.location.href = "login.html"; // Redireciona para a página de login
-        }
+        // Função para carregar as avaliações
+        function carregarAvaliacoes() {
+            const apiAvaliacoesUrl = 'http://localhost:5000/avaliacoes';
+            axios.get(apiAvaliacoesUrl)
+                .then(response => {
+                const reviewsList = document.getElementById('reviews-list');
+                reviewsList.innerHTML = ''; // Limpa a lista antes de adicionar novos itens
+                response.data.forEach(avaliacao => {
+                    const reviewItem = document.createElement('div');
+                    reviewItem.className = 'list-group-item';
 
-        // Autenticação e redirecionamento
-        async function authenticate(email, password) {
-            try {
-                const response = await fetch('http://localhost:5000/api/usuarios/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ email, senha: password })
+                    const reviewContent = `
+                    <h5 class="mb-1">${avaliacao.cliente.nome}</h5>
+                    <p class="mb-1">${avaliacao.comentario}</p>
+                    <small>Nota: ${avaliacao.nota} - Serviço: ${avaliacao.servico.nome}</small>
+                    `;
+
+                    reviewItem.innerHTML = reviewContent;
+                    reviewsList.appendChild(reviewItem);
                 });
-
-                if (!response.ok) {
-                    throw new Error('Erro ao autenticar');
-                }
-
-                const user = await response.json();
-
-                if (user) {
-                    saveSession(user);
-                    redirectToDashboard(user);
-                } else {
-                    alert('Email ou senha incorretos');
-                }
-            } catch (error) {
-                console.error('Erro ao autenticar:', error);
-                alert('Erro ao autenticar. Tente novamente mais tarde.');
+                })
+                .catch(error => {
+                console.error('Erro ao carregar as avaliações:', error);
+                document.getElementById('reviews-list').innerHTML = 'Ocorreu um erro ao carregar as avaliações. Tente novamente mais tarde.';
+                });
             }
-        }
 
-        // Redireciona usuário para a área correta
-        function redirectToDashboard(user) {
-            if (user.tipo === "profissional") {
-                window.location.href = "dashboard-profissional.html";
-                document.getElementById('login-page').classList.add('hidden');
-                document.getElementById('professional-page').classList.remove('hidden');
-                document.getElementById('professional-name').textContent = professional.nome;
-            } else if (user.tipo === "cliente") {
-                window.location.href = "dashboard-cliente.html";
-                document.getElementById('login-page').classList.add('hidden');
-                document.getElementById('cliente-page').classList.remove('hidden');
-                document.getElementById('cliente-name').textContent = professional.nome;
-            } else {
-                alert("Tipo de usuário inválido");
-                logout();
-            }
-        }
-
-        // Verifica se há um usuário logado ao carregar a página
-        document.addEventListener("DOMContentLoaded", function () {
+       // Event listeners
+       document.addEventListener('DOMContentLoaded', () => {
             const user = getSession();
             if (user) {
                 redirectToDashboard(user);
             }
         });
 
-    
+        document.querySelector('button[onclick="navega(\'update-data\')"]').addEventListener('click', () => navega('update-data'));
+        document.querySelector('button[onclick="navega(\'new-service\')"]').addEventListener('click', () => navega('new-service'));
+        document.querySelector('button[onclick="navega(\'Reviews\')"]').addEventListener('click', carregarAvaliacoes);
 
-        function login() {
-            // Captura o valor do campo de email
-                    const email = document.getElementById('email').value;
-                    // Captura o valor do campo de senha
-                    const password = document.getElementById('password').value;
-                    // Chama a função authenticate passando o email e a senha
-                    authenticate(email, password).then(professional => {
-                        // Se a autenticação for bem-sucedida e retornar um profissional
-                        if (professional) {
-                            // Chama a função fetchAppointments passando o ID do profissional
-                            fetchAppointments(professional.id);
-                        }
-                    });
-                }
-
-
-        function showSection(sectionId) {
-            document.getElementById('update-data').classList.add('hidden');
-            document.getElementById('new-service').classList.add('hidden');
-            document.getElementById('home').classList.add('hidden');
-            document.getElementById('Reviews').classList.add('hidden');
-            document.getElementById(sectionId).classList.remove('hidden');
-        }
-
-        function navega(destino){
-                let telas = document.getElementsByClassName('tela')
-                Array.from(telas).forEach(element => {
-                    element.classList.remove('show')
-                    element.classList.add('collapse')
-                });
-                document.getElementById(destino).classList.remove('collapse')
-                document.getElementById(destino).classList.add('show')
-            }
-            // Carrega a apresentação ao abrir a aba Home
-            // document.addEventListener('DOMContentLoaded', carregarApresentacao);
-            // Adiciona o evento de clique ao botão de serviços
-            document.querySelector('button[onclick="navega(\'services\')"]').addEventListener('click', carregarServicos);
-            // Adiciona o evento de clique ao botão de profissionais
-            document.querySelector('button[onclick="navega(\'profile\')"]').addEventListener('click', carregarProfissionais);
-    </script>
+    //     document.querySelector('button[onclick="navega(\'update-data\')"]').addEventListener('click', carregarAtualizarDados);
+    //     document.querySelector('button[onclick="navega(\'new-service\')"]').addEventListener('click', cadastrarNovoServico);
+    //     document.querySelector('button[onclick="navega(\'Reviews\')"]').addEventListener('click', carregarAvaliacoes);
+    // </script>
 </body>
 </html>

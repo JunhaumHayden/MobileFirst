@@ -37,3 +37,22 @@ O projeto ComfortAid é uma aplicação móvel desenvolvida para fornecer assist
 └── /utils
         └── ...
 ```
+
+
+/projeto
+│
+├── index.html          # Página principal
+├── assets
+│   ├── css
+│   │   └── style.css   # Estilos personalizados
+│   ├── js
+│   │   └── main.js     # Lógica principal da aplicação
+│   └── forms           # Pasta para os formulários
+│       ├── update-data.html  # Formulário de atualização de dados
+│       └── new-service.html  # Formulário de cadastro de novo serviço
+│
+├── sw.js               # Service Worker (para PWA)
+└── manifest.json       # Manifesto PWA
+
+- Adicionar validações de formulário.
+- Melhorar a experiência do usuário com feedbacks visuais (ex: loading spinners, mensagens de sucesso/erro).

@@ -1,7 +1,54 @@
-<input type="email" id="email" placeholder="Digite seu email">
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>ComfortAid App</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <!-- referências ao manifesto -->
+        <link rel="manifest" href="./manifest.json">
+        <meta name="theme-color" content="#007bff">
+        <!-- ... -->
+        <link rel="shortcut icon" type="imagex/png" href="https://www.canva.com/design/DAGe7NB7pgQ/ZJgk9vlJu-KtYm0tS4E_2g/view?utm_content=DAGe7NB7pgQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h58e967201c">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;1,200;1,400&family=Red+Hat+Display:wght@400;500;700&family=Roboto&display=swap"
+        rel="stylesheet">
+        <!-- ... -->
+        <link rel='stylesheet' type='text/css' media='screen' href='../assets/css/style.css'>
+        <link rel="shortcut icon" type="imagex/png" href="../assets/img/icone192.png">
+        <!-- font-awesome -->
+        <link rel='stylesheet' type='text/css' media='screen'         
+                href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css'>
+            <!-- ... -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    </head>
+    <body>
+        <header>
+            <h1>🌐 ComfortAid 🐘</h1>
+        </header>
+        <input type="email" id="email" placeholder="Digite seu email">
 <input type="password" id="password" placeholder="Digite sua senha">
 <button onclick="authenticate(
     document.getElementById('email').value, 
     document.getElementById('password').value
 )">Entrar</button>
+ <footer>
+    <div class="footer-container">
+        <div class="logo">
+            <img src="/PHP/assets/icons/icon36x36.ico" width="30" alt="Logo">
+        </div>
+        <div class="info">
+            <div>&copy; 2024 HTML / CSS / JavaScript / BootStrap</div>
+            <div>Desenvolvido por: Carlos Hayden Junior</div>
+        </div>
+        <div class="icons">
+            <img src="/PHP/assets/icons/icon-html5-48.png" width="20" alt="HTML Icon">
+            <img src="/PHP/assets/icons/icon-css3-48.ico" width="20" alt="CSS Icon">
+            <img src="/PHP/assets/icons/icons8-js-48.png" width="20" alt="JS Icon">
+        </div>
+    </div>
+    
+</footer>
 <script src = script.js></script>
+</body>
