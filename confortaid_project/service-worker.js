@@ -20,9 +20,8 @@ const cachename = 'comfortaid-v'+version
  */
 const arquivos = [
     "./",
-    "./indexx.html",
-    "./comfortaid_profissional_show.html",
-    "./comfortaid_profissional_env.html",
+    "./index.html",
+    "./comfortaid_user_env.html",
     "./main.js",
     "./service-worker.js",
     "./manifest.json",
