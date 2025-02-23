@@ -57,5 +57,8 @@ O projeto ComfortAid é uma aplicação móvel desenvolvida para fornecer assist
 ├── sw.js               # Service Worker (para PWA)
 └── manifest.json       # Manifesto PWA
 
+
+
+
 - Adicionar validações de formulário.
 - Melhorar a experiência do usuário com feedbacks visuais (ex: loading spinners, mensagens de sucesso/erro).
