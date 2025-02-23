@@ -3,7 +3,7 @@
 <head>
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ComfortAid Profissional</title>
+    <title>ComfortAid Área Restrita</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <!-- ... -->
     <link rel="shortcut icon" type="imagex/png" href="/PHP/assets/icon.ico">
@@ -95,10 +95,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="../../PHP/index.html">Início</a>
+                        <a class="nav-link" href="indexx.html">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="indexx.html">Voltar</a>
+                        <a class="nav-link" href="#" onclick="navega('home')">Voltar</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="tel:+5548988900001">Contato</a>
@@ -108,6 +108,7 @@
         </div>
     </nav>
     <div class="container_inner">
+        <!-- Apresentacao de login -->
         <div id="login-page">
             <h2 class="text-center">Login</h2>
             <div class="form-group">
@@ -249,11 +250,7 @@
                 <h3>Atualizar Dados</h3>
                 <!-- Formulário para atualizar dados -->
             </div>
-            <!-- Apresentacao Elemento Aadastrar Novo Serviço -->
-            <!-- <div id="new-service" class="tela collapse">
-                <h3>Cadastrar Novo Serviço</h3> -->
-                <!-- Formulário para cadastrar novo serviço -->
-            <!-- </div> -->
+            
             <!-- Apresentacao de Avaliacoes e parceiros do aplicativo-->
             <div id="Reviews" class="tela collapse">
                 <div class="container">
@@ -267,11 +264,25 @@
                         <div class="col-md-4">
                         <h4>Links Patrocinados</h4>
                         <div class="list-group">
-                            <a href="https://junhaumhayden.github.io/publish/" class="list-group-item list-group-item-action">Landingpage</a>
-                            <a href="https://junhaumhayden.github.io/publish/flexturismo.html" class="list-group-item list-group-item-action">FlexTurismo</a>
-                            <a href="https://junhaumhayden.github.io/publish/gatinhos.html" class="list-group-item list-group-item-action">Ver Gatinhos Fofinhos</a>
-                            <a href="https://arthurs08.github.io/ChefListPrj/" class="list-group-item list-group-item-action">ChefList</a>
-                        </div>
+                            <div class="ad">
+                                <a href="https://junhaumhayden.github.io/publish/" class="list-group-item list-group-item-action">Landingpage</a>
+                            </div>
+                            <div class="ad">
+                                <figure>
+                                    <img src="../FrontEnd/landingpage/Flexbox/anuncios/imagens/icon-1.png" width="100" alt="FlexTurismo">
+                                </figure>
+                                <a href="https://junhaumhayden.github.io/publish/flexturismo.html" class="list-group-item list-group-item-action">FlexTurismo</a>
+                            </div>
+                            <div class="ad">
+                                <img src="https://img.freepik.com/vetores-gratis/gato-bonito-com-ilustracao-dos-desenhos-animados-do-amor-sinal-mao-conceito-de-natureza-animal-isolado-estilo-flat-cartoon_138676-3419.jpg?w=1480&t=st=1724200872~exp=1724201472~hmac=de3b4f39c0ead5885aecdb0ddfe10c41815b69e81d8b9a53a390d50bd5533998" width= 100 alt="Amazon">
+                                <p><a href="../FrontEnd/landingpage/Flexbox/anuncios/gatinhos.html">Veja os Gatinhos mais fofinhos com JavaScript</a></p>
+                            
+                                <a href="https://junhaumhayden.github.io/publish/gatinhos.html" class="list-group-item list-group-item-action">Ver Gatinhos Fofinhos</a>
+                            </div>
+                            <div class="ad">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtLRjfzWzhL9UimIixsWB-DKOeRub2CFgC29qHsR7PXxF-Inptit722udqVMesTLsYbJl6Fw&s" width= 100 alt="ChefList, as melhores receitas da internet">
+                                <a href="https://arthurs08.github.io/ChefListPrj/" class="list-group-item list-group-item-action">ChefList</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -363,8 +374,6 @@
                 logout();
             }
         }
-
-    
         // Função para realizar o login
         function login() {
             // Captura o valor do campo de email
@@ -432,165 +441,7 @@
             }
         }
     // Funções de carregamento de dados
-
-
-         // Funcao para apresentar a agenda de profissional
-//          async function fetchAppointmentsProfessional(professionalId) {
-//             try {
-//                 const response = await fetch(`http://localhost:5000/agendamentos/profissional/${professionalId}`);
-//                 const appointments = await response.json();
-//                 const appointmentsList = document.getElementById('appointments-list');
-//                 appointmentsList.innerHTML = '';
-
-//                 appointments.forEach(appointment => {
-//                     const listItem = document.createElement('li');
-//                     listItem.classList.add('appointment-card');
-//                     listItem.innerHTML = `
-//                         <h4>${appointment.servico.nome}</h4>
-//                         <p>Cliente: ${appointment.cliente.nome}</p>
-//                         <p>Data: ${new Date(appointment.dataHora).toLocaleString()}</p>
-//                     `;
-//                     listItem.onclick = () => showAppointmentDetails(appointment);
-//                     appointmentsList.appendChild(listItem);
-//                 });
-//             } catch (error) {
-//                 console.error('Erro ao buscar agendamentos:', error);
-//                 alert('Erro ao buscar agendamentos. Tente novamente mais tarde.');
-//             }
-//             Gerar uma Funcao para apresentar a agenda de profissional utilizando axios e bootstrap para manter a responsividade e um visual envolvente.
-// A lista de agendamentos do profissional será apresentada em:
-// <div id="home" class="tela show">
-//                 <h3>HOME</h3>
-//                 <h2>Bem-vindo, <span id="professional-name"></span></h2>
-//                 <button class="btn btn-secondary" onclick="navega('update-data')">Atualizar Dados</button>
-//                 <button class="btn btn-secondary" onclick="navega('new-service')">Cadastrar Novo Serviço</button>
-                
-//                 <h4>Agendamentos Programados</h4>
-//                     <div class="row" id="scheduled-appointments"></div>
-//                     <div id="error-message" class="error-message"></div>
-//                     <ul id="appointments-list"></ul>
-//                     <!-- Lista de agendamentos -->
-//             </div>
-// Descriçao da função:
-//          function fetchAppointmentsProfessional(professionalId) {
-//             - O ID deve ser recuperado apartir da sessao autenticada.
-//             - A funcao deve gerar um card para cada agendamento da lista com as informaçoes do nome do servico, nome do cliente e data e a imagem do cliente (uma imagem em tamanho pequeno e com as bordas redondas).
-//             - Deve haver filtro por status do agendamento ("CONFIRMADO", "CANCELADO", "PENDENTE")
-
-//             Endpoints:
-
-//             apiBuscarAgendamentoProfissionalPorIdUrl = `http://localhost:5000/agendamentos/profissional/${professionalId}`;
-
-//             exemplo de retorno da API: 
-//             [
-//                 {
-//                     "id": 1,
-//                     "cliente": {
-//                         "id": 1,
-//                         "nome": "Ana Amalia",
-//                         "email": "ana@mail.com",
-//                         "senha": "senha",
-//                         "telefone": "(11) 99999-0001",
-//                         "cep": "88111-111",
-//                         "complementoEndereco": "Apto 101",
-//                         "numeroEndereco": "001",
-//                         "tipo": "cliente",
-//                         "cpf": "11111111111",
-//                         "nascimento": "1955-01-12"
-//                     },
-//                     "servico": {
-//                         "id": 1,
-//                         "nome": "Massagem Relaxante",
-//                         "descricao": "Sessão de massagem para aliviar o estresse e tensões",
-//                         "preco": 120.0,
-//                         "duracao": 60,
-//                         "situacao": "ATIVO",
-//                         "dataDisponivel": "2025-01-12",
-//                         "profissional": {
-//                             "id": 3,
-//                             "nome": "Dany Damaris",
-//                             "email": "dany@mail.com",
-//                             "senha": "senha",
-//                             "telefone": "(31) 97777-0003",
-//                             "cep": "88333-333",
-//                             "complementoEndereco": "Sala 3",
-//                             "numeroEndereco": "003",
-//                             "tipo": "profissional",
-//                             "especialidade": "Massoterapia",
-//                             "registroProfissional": "REG33333"
-//                         }
-//                     },
-//                     "dataHora": "2024-01-12T10:00:00",
-//                     "status": "CONFIRMADO"
-//                 }
-//             ]
-
-//             apiUrlBuscarImagemClientePorId = `http://localhost:5000/imagens/usuario/foto/${clienteId}`;
-
-//             Retorna uma imagem.
-
-
-//             - Ao clicar no card de agendamento deve abrir um novo card com os detalhes do agendamento, que deve conter os detalhes do cliente e deve usar uma API externa para obter o endereço apartir do CEP referencialmente com um mapa para visualizar mais facilmente
-//             - Deve haver um botoes para alterar facilmente status do agendamento ("CONFIRMADO", "CANCELADO", "PENDENTE")
-            
-
-//             apiUrlAtualizarAgendamentoProfissionalPorId = `http://localhost:5000/agendamentos/status/${professionalId}`
-            
-//             Exemplo de envio no corpo: 
-//             {
-//                 "cliente": {
-//                     "id": 1
-//                 },
-//                 "servico": {
-//                     "id": 1
-//                 },
-//                 "dataHora": "2024-02-17T10:00:00",
-//                 "status": "CONFIRMADO"
-//             }
-
-//             Exemplo de retorno da api:arguments{
-//     "id": 4,
-//     "cliente": {
-//         "id": 1,
-//         "nome": "Ana Amalia",
-//         "email": "ana@mail.com",
-//         "senha": "senha",
-//         "telefone": "(11) 99999-0001",
-//         "cep": "88111-111",
-//         "complementoEndereco": "Apto 101",
-//         "numeroEndereco": "001",
-//         "tipo": "cliente",
-//         "cpf": "11111111111",
-//         "nascimento": "1955-01-12"
-//     },
-//     "servico": {
-//         "id": 4,
-//         "nome": "Acolhimento Primeiros Dias",
-//         "descricao": "Acompanhamento dos primeiros dias em sua jornada nesse maravilhoso universo da maternidade.",
-//         "preco": 300.0,
-//         "duracao": 180,
-//         "situacao": "ATIVO",
-//         "dataDisponivel": "2024-02-22",
-//         "profissional": {
-//             "id": 4,
-//             "nome": "Emy Esteves",
-//             "email": "emy@mail.com",
-//             "senha": "senha",
-//             "telefone": "(41) 96666-0004",
-//             "cep": "88333-444",
-//             "complementoEndereco": "casa",
-//             "numeroEndereco": "004",
-//             "tipo": "profissional",
-//             "especialidade": "Parteira",
-//             "registroProfissional": "REG44444"
-//         }
-//     },
-//     "dataHora": "2024-01-14T09:00:00",
-//     "status": "CONFIRMADO"
-// }
-            
-            
-//         }
+ 
 // Funcao para apresentar a agenda de profissional
         async function fetchAppointmentsProfessional(professionalId) {
             try {
@@ -694,8 +545,10 @@
                                         <div class="col-md-6">
                                             <h6>Cliente</h6>
                                             <p><strong>Nome:</strong> ${appointment.cliente.nome}</p>
+                                            <p><strong>Nome:</strong> ${appointment.cliente.nascimento}</p>
                                             <p><strong>Telefone:</strong> ${appointment.cliente.telefone}</p>
-                                            <p><strong>Endereço:</strong> ${endereco.logradouro}, ${endereco.bairro}, ${endereco.localidade} - ${endereco.uf}</p>
+                                            <p><strong>Endereço:</strong> ${endereco.logradouro}, ${appointment.cliente.numeroEndereco}, ${endereco.bairro}, ${endereco.localidade} - ${endereco.uf} - ${appointment.cliente.cep}</p>
+                                            <p><strong>Complemento:</strong> ${appointment.cliente.complementoEndereco}</p>
                                         </div>
                                     </div>
                                     <div class="mt-3">
@@ -735,8 +588,13 @@
         async function updateAppointmentStatus(appointmentId, status) {
             try {
                 const response = await axios.put(`http://localhost:5000/agendamentos/status/${appointmentId}`, {
-                    status: status
-                });
+                    status: status},
+                {
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                }
+            });
 
                 if (response.status === 200) {
                     alert('Status do agendamento atualizado com sucesso!');
@@ -747,7 +605,6 @@
                 alert('Erro ao atualizar status. Tente novamente mais tarde.');
             }
         }
-
     // Funcao para apresentar a agenda de cliente
         async function fetchAppointmentsClient(clienteId) {
             try {
@@ -839,16 +696,6 @@
             // ]
         }
 
-        function showAppointmentDetails(appointment) {
-            alert(`
-                Serviço: ${appointment.servico.nome}
-                Cliente: ${appointment.cliente.nome}
-                Data: ${new Date(appointment.dataHora).toLocaleString()}
-                Descrição: ${appointment.servico.descricao}
-                Preço: R$${appointment.servico.preco}
-                Duração: ${appointment.servico.duracao} minutos
-            `);
-        }
         // Função para atualizar os dados
         function carregarAtualizarDados(){
             // Funcao para gerar um card para atualizar os dados do usuario.

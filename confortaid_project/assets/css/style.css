@@ -16,6 +16,41 @@ p {
     color: rgb(239, 22, 22);
 }
 
+/*A <div class="content-wrapper"> envolve o conteúdo principal e a nova seção de anúncios, utilizando display: flex; para alinhar os elementos lado a lado.*/
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+/*Formata a sessao de anuncios
+A .ad-section foi estilizada para ter uma largura fixa de 300px, e um fundo levemente diferente para destacar os anúncios.*/
+.ad-section {
+    width: 200px;
+    padding: 20px;
+    background-color: #afaaaa;
+    border: 1px solid #ff4081;
+}
+
+.ad-section h2 {
+    text-align: center;
+    color: #f6f5f5;
+}
+/*Cada anúncio dentro da seção de anúncios (.ad) foi estilizado para incluir uma imagem e um texto descritivo abaixo dela.*/
+.ad-section .ad {
+    margin-bottom: 20px;
+}
+
+.ad-section .ad img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.ad-section .ad p {
+    text-align: center;
+    font-size: 14px;
+}
+
 /* Ajuste do menu de navegação para respeitar o fluxo da página */
 .navigation {
     display: flex;
