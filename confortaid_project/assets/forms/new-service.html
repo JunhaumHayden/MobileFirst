@@ -1,4 +1,4 @@
-<div class="container mt-4">
+<div id="new-service" class="tela collapse">
     <h3>Cadastrar Novo Serviço</h3>
     <form id="new-service-form">
         <div class="form-group">
@@ -6,21 +6,32 @@
             <input type="text" id="nome-servico" class="form-control" required>
         </div>
         <div class="form-group">
-            <label for="descricao">Descrição</label>
-            <textarea id="descricao" class="form-control" required></textarea>
+            <label for="descricao-servico">Descrição</label>
+            <textarea id="descricao-servico" class="form-control" required></textarea>
         </div>
         <div class="form-group">
-            <label for="preco">Preço</label>
-            <input type="number" id="preco" class="form-control" required>
+            <label for="preco-servico">Preço</label>
+            <input type="number" id="preco-servico" class="form-control" required>
         </div>
         <div class="form-group">
-            <label for="duracao">Duração (minutos)</label>
-            <input type="number" id="duracao" class="form-control" required>
+            <label for="duracao-servico">Duração (minutos)</label>
+            <input type="number" id="duracao-servico" class="form-control" required>
         </div>
         <div class="form-group">
-            <label for="imagem">Imagem do Serviço</label>
-            <input type="file" id="imagem" class="form-control">
+            <label for="situacao-servico">Situação</label>
+            <select id="situacao-servico" class="form-control" required>
+                <option value="ATIVO">Ativo</option>
+                <option value="INATIVO">Inativo</option>
+            </select>
         </div>
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <div class="form-group">
+            <label for="data-disponivel-servico">Data Disponível</label>
+            <input type="date" id="data-disponivel-servico" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="imagem-servico">Imagem do Serviço</label>
+            <input type="file" id="imagem-servico" class="form-control">
+        </div>
+        <button type="button" class="btn btn-primary" onclick="cadastrarNovoServico()">Cadastrar</button>
     </form>
 </div>
