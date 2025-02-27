@@ -25,12 +25,8 @@ O projeto ComfortAid é uma aplicação móvel desenvolvida para fornecer assist
 
 ```
 /confortaid_project
-├── comfortaid_profissional_show.html
-├── comfortaid_profissional_env
-├── ind0101.html
-├── /components
-│   ├── Header.js
-│   └── Footer.js
+├── index.html
+├── comfortaid_user_env
 ├── /assets
 │   ├── css
 |   ├── html

@@ -36,7 +36,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 bg-light">
                     <li class="nav-item">
-                        
+                        <a class="nav-link" href="indexx.html">Início</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" onclick="navega('home')">Voltar</a>
@@ -46,14 +46,14 @@
                     </li>
                 </ul>
                 <!-- Link de Contato -->
-            <a href="tel:+5548988900001" class="btn btn-light me-3">
+            <a href="tel:+5548988900001" class="btn btn-primary me-3">
                 <i class="fa-solid fa-phone"></i> Contato
             </a>
 
             <!-- Link de Login -->
-            <a href="comfortaid_user_env.html" class="btn btn-primary">
+            <!-- <a href="comfortaid_user_env.html" class="btn btn-primary">
                 <i class="fa-solid fa-sign-in-alt"></i> Login
-            </a>
+            </a> -->
             </div>
         </div>
     </nav>
@@ -606,6 +606,7 @@
         // Salva usuário na sessão
         function saveSession(user) {
             sessionStorage.setItem('user', JSON.stringify(user));
+            // Armazena os dados no sessionStorage
         }
 
         // Recupera usuário da sessão
