@@ -16,14 +16,6 @@ p {
     color: rgb(239, 22, 22);
 }
 
-/* A .ad-section foi estilizada para ter uma largura fixa de 300px, e um fundo levemente diferente para destacar os anúncios.*/
-/* .ad-section {
-    width: 200px;
-    padding: 20px;
-    background-color: #afaaaa;
-    border: 1px solid #ff4081;
-} */
-
 /* Estilos para a seção de anúncios */
 .ad-section {
     width: 300px; /* Largura fixa para a seção */
@@ -34,16 +26,6 @@ p {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-left: 20px; /* Espaçamento à esquerda */
 }
-.ad-sections {
-    width: 300px; /* Largura fixa para a seção */
-    padding: 15px;
-    background-color: #c1ede500;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-left: 20px; /* Espaçamento à esquerda */
-}
-
 
 .ad-section h2 {
     text-align: center;
@@ -234,23 +216,6 @@ body {
     margin: 0;
     padding: 0;
  }
-
- /* header {
-    background-color: #222;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 4px solid #ff4081;
- } */
- 
- header{
-    background-color: black; /* Cor de fundo*/
-    color: gainsboro; /* Cor do Texto*/
-    width: 100%; /* Ocupa toda a largura da tela*/
-    display: flex; /* Define que o elemento é flex*/
-    justify-content: space-evenly; /* Distribui o espaço entre os filho de maneira igual*/
-    padding-left: 1rem; /* Espaçamento interna responsivo */
- }
-
   /* Ajuste dos cartões */
  .painel-cartoes{
     display: flex;
@@ -271,14 +236,6 @@ body {
     background-color: #ffffff; /* Mantém as configurações existentes */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  
-    /* margin-top: 50px;
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px; */
   }
   .card {
     background-color: #ffffff;
@@ -356,6 +313,20 @@ footer{
     flex-direction: row;
     margin-top: 1rem; /* Adiciona espaçamento superior */
  }
+ .header {
+    background: #4CAF50;
+    color: rgb(220, 219, 219);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+.header .card {
+    background: #4CAF50;
+    color: rgb(232, 230, 230);
+}
+
+
+
 
  .footer-container {
     display: flex;
@@ -406,6 +377,10 @@ footer{
         flex-wrap: wrap;
         justify-content: space-around;
     }
+    .features .card {
+        background: #bff1c151;
+        color: rgb(47, 45, 45);
+    }
     .feature {
         display: flex;
         width: 100%;
@@ -413,7 +388,7 @@ footer{
         margin-top: 10px;
         margin-right: 10px;
         margin-left: 10px;
-        background: white;
+        background: rgba(173, 235, 146, 0.235);
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         padding: 20px;
