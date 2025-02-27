@@ -356,7 +356,14 @@ footer{
 .icons img {
     margin-left: 10px;
 }
-
+.navbar-toggler {
+    padding: 0.25rem 0.5rem; /* Reduz o tamanho do botão */
+    font-size: 0.875rem; /* Reduz o tamanho do ícone */
+}
+.navbar-toggler-icon {
+    width: 20px; /* Reduz a largura do ícone */
+    height: 20px; /* Reduz a altura do ícone */
+}
 /* Estilos para a seção de restrita */
 .container_inner {
     display: flex;
